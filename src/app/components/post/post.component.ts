@@ -34,6 +34,10 @@ export class PostComponent implements OnInit {
     this.numberOfLikes++;
   }
 
+  dislikePost = () => {
+    this.numberOfLikes--;
+  }
+
   submitReply = (e: any) => {
     e.preventDefault()
     let newComment = new Post(0, this.commentForm.value.text || "", "", this.authService.currentUser, [])
