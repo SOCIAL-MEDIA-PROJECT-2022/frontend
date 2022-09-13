@@ -18,6 +18,9 @@
         <mat-card-actions align="end">
             <button mat-raised-button color="primary" (click)="toggleReplyToPost()">Reply</button>
         </mat-card-actions>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="likePost()">Like</button>
+        </mat-card-actions>
         <form class="form" *ngIf="replyToPost" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Make a Post</mat-label>

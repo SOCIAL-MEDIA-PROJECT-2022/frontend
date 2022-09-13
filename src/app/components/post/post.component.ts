@@ -18,6 +18,9 @@ export class PostComponent implements OnInit {
   @Input('post') post: Post
   replyToPost: boolean = false
 
+  //Likes
+  numberOfLikes : number = 0;
+
   constructor(private postService: PostService, private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -25,6 +28,10 @@ export class PostComponent implements OnInit {
 
   toggleReplyToPost = () => {
     this.replyToPost = !this.replyToPost
+  }
+
+  likePost = () => {
+    this.numberOfLikes++;
   }
 
   submitReply = (e: any) => {
