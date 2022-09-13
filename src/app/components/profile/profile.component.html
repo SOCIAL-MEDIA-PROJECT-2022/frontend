@@ -4,36 +4,29 @@
     <app-user-card></app-user-card>
 </div>
 
-<!-- <div class="user-info">
-    <h2>User Profile</h2>
-    <ul id="user-list-info">
-        <li id="username">Username: </li>
-        <li id="email">Email: {{user.email}}</li>
-        <li id="firstName">First Name: {{user.firstName}}</li>
-        <li id="lastName">Last Name: {{user.lastName}}</li>
-    </ul> -->
-
-    <form>
-        <div class="form-group">
+<form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit($event)">
+    <!-- <div class="form-group">
             <label for="handle">@handle</label>
-            <input id="handle" type="text" class="form-control">
-        </div>
+            <input id="handle" type="text" class="form-control" formControlName="handle">
+        </div> -->
         <div class="form-group">
             <label for="firstName">First Name</label>
-            <input id="firstName" value="{{user.firstName}}" type="text" class="form-control">
+            <input id="firstName" type="text" class="form-control" formControlName="firstName">
         </div>
         <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input id="lastName" value="{{user.lastName}}" type="text" class="form-control">
+            <input id="lastName" type="text" class="form-control" formControlName="lastName">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" value="{{user.email}}" type="email" class="form-control">
+            <input id="email" type="email" class="form-control" formControlName="email">
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" formControlName="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
-    
-</div>
 
 
 
