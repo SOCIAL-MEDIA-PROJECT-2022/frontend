@@ -31,4 +31,9 @@ export class AuthService {
     const payload = {firstName: firstName, lastName: lastName, email: email, password: password};
     return this.http.post<any>(`${this.authUrl}/register`, payload, {headers: environment.headers});
   }
+
+  update(firstname: string, lastName: string, email: string, password: string){
+    const payload = {firstname: firstname, lastName: lastName, email: email};
+    return this.http.put<any>(`${this.authUrl}/user/update`, payload,  {headers: environment.headers});
+  }
 }
