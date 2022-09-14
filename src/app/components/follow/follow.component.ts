@@ -35,7 +35,8 @@ export class FollowComponent implements OnInit {
       }
 
       this.follower = <Follower>({ id: this.authService.currentUser.id, email: this.user.email, state: this.state })
-      this.followService.follow(this.follower);
+      console.log(this.follower)
+      this.followService.follow(this.follower).subscribe();
     }
   }
 }

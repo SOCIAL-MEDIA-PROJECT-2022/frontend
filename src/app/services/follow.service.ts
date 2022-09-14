@@ -14,7 +14,10 @@ export class FollowService {
   constructor(private http: HttpClient) { }
 
   follow(follower: Follower): Observable<any> {
-    return this.http.patch(`${this.posturl}`, follower, { headers: environment.headers, withCredentials: environment.withCredentials })
+    console.log("made it here")
+    console.log(follower)
+    console.log(this.posturl)
+    return this.http.patch<any>(`${this.posturl}`, follower, { headers: environment.headers, withCredentials: environment.withCredentials })
 
   }
 
