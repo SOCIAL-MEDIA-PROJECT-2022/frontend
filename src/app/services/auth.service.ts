@@ -48,13 +48,13 @@ export class AuthService {
   }
 
   update(
-    firstname: string,
+    firstName: string,
     lastName: string,
     email: string,
     password: string
   ): Observable<any> {
     const payload = {
-      firstname: firstname,
+      firstName: firstName,
       lastName: lastName,
       email: email,
       password: password,

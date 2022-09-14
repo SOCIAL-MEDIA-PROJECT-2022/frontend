@@ -19,8 +19,8 @@ export class ProfileComponent implements OnInit {
     this.user = this.authService.currentUser;
   }
   profileForm = new FormGroup({
-    firstName: new FormControl(`${this.user.firstName}`),
-    lastName: new FormControl(`${this.user.lastName}`),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
   });
@@ -33,6 +33,8 @@ export class ProfileComponent implements OnInit {
         this.profileForm.value.email || '',
         this.profileForm.value.password || ''
       )
-      .subscribe((response) => {});
+      .subscribe((response) => {
+        console.log(response);
+      });
   }
 }
