@@ -18,12 +18,14 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.authService.currentUser;
   }
+
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
   });
+  
   onSubmit(e: any): void {
     e.preventDefault();
     this.authService
