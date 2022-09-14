@@ -8,31 +8,31 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-
   user: User = {} as User;
 
-  profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl('')
-  })
-
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
   }
-
+  profileForm = new FormGroup({
+    firstName: new FormControl(`${this.user.firstName}`),
+    lastName: new FormControl(`${this.user.lastName}`),
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
   onSubmit(e: any): void {
-    e.preventDefault()
-    this.authService.update(this.profileForm.value.firstName || "", this.profileForm.value.lastName || "", this.profileForm.value.email || "", this.profileForm.value.password || "")
-      .subscribe(
-        (response) => {
-        }
+    e.preventDefault();
+    this.authService
+      .update(
+        this.profileForm.value.firstName || '',
+        this.profileForm.value.lastName || '',
+        this.profileForm.value.email || '',
+        this.profileForm.value.password || ''
       )
+      .subscribe((response) => {});
   }
 }
