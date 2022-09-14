@@ -7,9 +7,5 @@
     <p>
         {{user.email}}
     </p>
-
-    <div *ngIf = "isLoggedIn()">
-        <button (click)="unFollow();" id="follow-button" text-color="green">{{this.follow}}</button>   
-    </div>
-    
+    <app-follow></app-follow>
 </mat-card>

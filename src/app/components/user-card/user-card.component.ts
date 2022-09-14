@@ -19,7 +19,6 @@ export class UserCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
-    //this.follow = "Follow";
   }
 
   isLoggedIn() {
@@ -30,8 +29,8 @@ export class UserCardComponent implements OnInit {
     //setProperty( "name of the property you are changing", the change)
     const element: HTMLElement | null = document.getElementById('follow-button');
     if (element) {
-      var state: string;
-      var follow: Follower;
+      let state: string;
+      let follow: Follower;
 
       if (this.follow == "Unfollow") {
         //this.follow = "Follow";
@@ -59,26 +58,5 @@ export class UserCardComponent implements OnInit {
 
 
     }
-    //ternary operator to set text for element 
-    //element.innerText = (element.innerText == "Follow") ? "Unfollow" : "Follow" (gen idea, might not work but good jumping point)
-
   }
-
-  /*const followBtn = document.getElementById('follow-button');
-
-  followBtn.addEventListener('click', function unFollow(): void {
-    btn.style.backgroundColor = 'red';
-    btn.style.color = 'white';
-  });*/
 }
-
-
-
-/*let unFollow = () => {
-  let btn = document.getElementById('follow-button');
-    color: 'red';     text: "Unfollow";     border: 'red';
-    btn.innerText = "Unfollow";
-    btn.
-}*/
-//let btn = document.getElementById('followButton');
-
