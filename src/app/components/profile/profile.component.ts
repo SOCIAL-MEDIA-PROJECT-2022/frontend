@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
         this.profileForm.value.password || ''
       )
       .subscribe((response) => {
-        console.log(response);
+        this.user=response;
       });
   }
 }
