@@ -3,7 +3,7 @@
 <div class="sidebyside">
   <app-user-card></app-user-card>
 </div>
-<h2>Hello {{ user.firstName}}</h2>
+<h2>Hello {{ user.firstName }}</h2>
 <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit($event)">
   <!-- <div class="form-group">
             <label for="handle">@handle</label>
@@ -45,7 +45,6 @@
       formControlName="password"
     />
   </div>
-  
 
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>

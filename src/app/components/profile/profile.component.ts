@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import User from 'src/app/models/User';
 import Post from 'src/app/models/Post';
@@ -34,7 +34,8 @@ export class ProfileComponent implements OnInit {
         this.profileForm.value.password || ''
       )
       .subscribe((response) => {
-        this.user=response;
+        this.user = response;
       });
   }
+  
 }

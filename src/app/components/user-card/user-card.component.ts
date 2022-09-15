@@ -16,5 +16,7 @@ export class UserCardComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.authService.currentUser
   }
+  
+
 
 }
