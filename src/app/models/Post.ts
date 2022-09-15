@@ -5,15 +5,15 @@ export default class Post {
     text: string
     imageUrl: string
     author: User
-    //likes : number
+    likes: string[]
     comments: Post[]
 
-    constructor (id: number, text: string, imageUrl: string, author: User,/* likes: number,*/ comments: Post[]) {
+    constructor (id: number, text: string, imageUrl: string, author: User, likes: string[], comments: Post[]) {
         this.id = id
         this.text = text
         this.imageUrl = imageUrl
         this.author = author
-        //this.likes = likes
+        this.likes = likes
         this.comments = comments
     }
 }
