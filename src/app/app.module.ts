@@ -44,7 +44,6 @@ import { SearchFeedPageComponent } from './components/search-feed-page/search-fe
     UserCardComponent,
     NavbarComponent,
     UserInitialsPipe,
-
     ProfileComponent,
     NotFoundComponent,
     MyCardComponent,
@@ -56,6 +55,7 @@ import { SearchFeedPageComponent } from './components/search-feed-page/search-fe
 
     SearchBarComponent,
     SearchFeedPageComponent,
+
   ],
   imports: [
     BrowserModule,
