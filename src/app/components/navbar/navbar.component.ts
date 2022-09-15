@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit{
   }
 
   home(){
-    this.router.navigate(['post-feed']);
+    this.router.navigate(['post-feed'])
   }
 
 }
