@@ -1,9 +1,9 @@
 <p>
     <mat-toolbar>
-        <span [routerLink]="['/post-feed']">Social Media</span>
-        <span [routerLink]="['/profile']">Social Media</span>
+        <span class="social-button"[routerLink]="['/post-feed']" mat-button (click)="home()">Social Media</span>
         <span class="spacer"></span>
-        <button mat-button (click)="profile()">Profile</button>
+        <button mat-button (click)="home()">Home</button>
+        <button mat-button (click)="profile()">Profile</button>   
         <button mat-button (click)="logout();">Logout</button>
     </mat-toolbar>
 </p>
