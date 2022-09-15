@@ -4,6 +4,7 @@ import User from 'src/app/models/User';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ProfileComponent implements OnInit {
   user: User = {} as User;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private profileService: ProfileService) {}
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
@@ -28,15 +29,10 @@ export class ProfileComponent implements OnInit {
   
   onSubmit(e: any): void {
     e.preventDefault();
-    this.authService
-      .update(
-        this.profileForm.value.firstName || '',
-        this.profileForm.value.lastName || '',
-        this.profileForm.value.email || '',
-        this.profileForm.value.password || ''
+    console.log(this.user);
+    this.profileService
+      .update(this.user
       )
-      .subscribe((response) => {
-        this.user=response;
-      });
+      .subscribe( );
   }
 }
