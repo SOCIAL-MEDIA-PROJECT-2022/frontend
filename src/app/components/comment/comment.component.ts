@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import Likes from 'src/app/models/Likes';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from 'src/app/services/post.service';
@@ -26,10 +27,13 @@ export class CommentComponent implements OnInit {
   toggleReplyToComment = () => {
     this.replyToComment = !this.replyToComment
   }
-
+  Likes = {
+    id: 0,
+    email: ""
+  }
   submitReply = (e: any) => {
     e.preventDefault()
-    let newComment = new Post(0, this.commentForm.value.text || "", "", this.authService.currentUser, [], [])
+    let newComment = new Post(0, this.commentForm.value.text || "", "", this.authService.currentUser, [])
     this.postService.upsertPost({...this.inputComment, comments: [...this.inputComment.comments, newComment]})
       .subscribe(
         (response) => {
