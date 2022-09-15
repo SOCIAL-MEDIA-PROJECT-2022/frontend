@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import User from 'src/app/models/User';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -21,9 +21,9 @@ export class ProfileComponent implements OnInit {
   }
 
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
     password: new FormControl(''),
   });
   
