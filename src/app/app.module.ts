@@ -17,6 +17,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserInitialsPipe } from './pipes/user-initials.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
 import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundError } from 'rxjs';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -25,6 +26,10 @@ import { MyCardComponent } from './components/my-card/my-card.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { FoundUsersComponent } from './components/found-users/found-users.component';
+
+import { FollowComponent } from './components/follow/follow.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -37,11 +42,16 @@ import { FoundUsersComponent } from './components/found-users/found-users.compon
     UserCardComponent,
     NavbarComponent,
     UserInitialsPipe,
+
     ProfileComponent,
     NotFoundComponent,
     MyCardComponent,
     SearchResultsComponent,
     FoundUsersComponent,
+
+    FollowComponent,
+    SearchBarComponent,
+
   ],
   imports: [
     BrowserModule,
