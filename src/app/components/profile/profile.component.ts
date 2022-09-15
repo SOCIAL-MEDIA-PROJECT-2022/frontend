@@ -13,7 +13,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ProfileComponent implements OnInit {
   user: User = {} as User;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+    
+  }
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
@@ -25,6 +27,8 @@ export class ProfileComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
+
+  
   
   onSubmit(e: any): void {
     e.preventDefault();
