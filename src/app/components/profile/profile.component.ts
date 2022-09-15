@@ -26,6 +26,8 @@ export class ProfileComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl(''),
   });
+
+  
   
   onSubmit(e: any): void {
     e.preventDefault();

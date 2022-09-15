@@ -5,18 +5,32 @@
     </mat-card-header>
     <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
       <mat-card-content>
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Email" formControlName="email">
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Password" type="password" formControlName="password">
-        </mat-form-field>
+
         <mat-form-field class="full-width">
           <input matInput placeholder="First Name" formControlName="firstName">
+          <!-- <mat-error *ngIf="registerForm.get('firstName').hasError('required')">First name must be filled out</mat-error> -->
         </mat-form-field>
+
         <mat-form-field class="full-width">
           <input matInput placeholder="Last Name" formControlName="lastName">
+          <mat-error *ngIf="registerForm.value.lastName">Last name must be filled out.</mat-error>
         </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" formControlName="email" type="e">
+          <mat-error *ngIf="registerForm.value.email">Email must be valid.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Password" type="password" formControlName="password">
+          <mat-error *ngIf="registerForm.value.password">Password must be a combination of lower-case, upper-case, numbers and at least 9 characters long</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Confirm password" type="password" formControlName="confirmPassword">
+          <!-- <mat-error *ngIf="registerForm.value.verifyPassword">Passwords do not match.</mat-error> -->
+        </mat-form-field>
+
       </mat-card-content>
       <button mat-stroked-button color="accent" class="btn-block" type="submit">Register</button>
     </form>
