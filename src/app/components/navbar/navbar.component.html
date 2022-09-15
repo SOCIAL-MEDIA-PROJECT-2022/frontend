@@ -2,8 +2,8 @@
     <mat-toolbar>
         <span class="social-button"[routerLink]="['/post-feed']" mat-button (click)="home()">Social Media</span>
         <span class="spacer"></span>
-        <button mat-button (click)="home()">Home</button>
-        <button mat-button (click)="profile()">Profile</button>   
+        <button class = "home-button" mat-button (click)="home()">Home</button>
+        <button class = "profile-button" mat-button (click)="profile()" ><img class = "profile-img" src="https://revature.com/wp-content/uploads/2017/08/rev-logo-2.png" /></button>   
         <button mat-button (click)="logout();">Logout</button>
     </mat-toolbar>
 </p>
