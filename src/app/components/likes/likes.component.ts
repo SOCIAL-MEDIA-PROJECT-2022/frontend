@@ -23,8 +23,9 @@ export class LikesComponent implements OnInit {
   likePost = () => {
     //fetch post id and user email
     this.likes = {
-      id: this.postID,
-      email: this.authService.currentUser.email
+      id: 10000,
+      //email: this.authService.currentUser.email
+      id2: 1
     }
     console.log(this.postID)
     console.log("This was our likes object")
