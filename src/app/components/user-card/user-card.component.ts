@@ -19,6 +19,8 @@ export class UserCardComponent implements OnInit {
     this.user = this.authService.currentUser
     //API call for profile table to display here
   }
+  
+
 
   // ngOnChanges(): void {
   //   this.user = this.authService.currentUser

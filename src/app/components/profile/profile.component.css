@@ -2,3 +2,48 @@
     list-style: none;
 }
 
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #e2e2e2;
+}
+
+.container{
+    background: whitesmoke;
+    max-width: 500px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 5px;
+
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    border-radius: 25px;
+
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.form .user-details .form-group{
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .form-group input{
+    height: 40px;
+    width: 100%;
+}
+
+.form-group label{
+    font-weight: 600;
+}
