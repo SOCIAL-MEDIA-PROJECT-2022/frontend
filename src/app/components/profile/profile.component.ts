@@ -27,14 +27,17 @@ export class ProfileComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  
-  
-  onSubmit(e: any): void {
-    e.preventDefault();
-    console.log(this.user);
-    this.profileService
-      .update(this.user
-      )
-      .subscribe( );
+  onSubmit($event: any) {
+    console.log("Submit was clicked!", $event);
   }
+
+  
+  // onSubmit(e: any): void {
+  //   e.preventDefault();
+  //   console.log(this.user);
+  //   this.profileService
+  //     .update(this.user 
+  //     )
+  //     .subscribe( );
+  // }
 }

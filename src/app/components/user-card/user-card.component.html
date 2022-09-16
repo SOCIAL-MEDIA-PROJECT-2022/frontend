@@ -1,11 +1,35 @@
-<mat-card class="user-card">
+<!-- <div style="
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+"> -->
+<mat-card class="user-card" style="width: 500px;">
+    <mat-card-title>
+        Matt Myers     
+        <!-- {{user.firstName}} {{user.lastName}} -->
+    </mat-card-title>
+    <mat-card-subtitle>@BigDogMatty</mat-card-subtitle>
     <div class="user-circle"></div>
     <mat-divider></mat-divider>
+    <mat-card-content>
+
+
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+        <button mat-raised-button>Submit</button>
+        <button mat-flat-button>Cancel</button>
+    </mat-card-actions>
+
+
+<!--
     <p style="padding-top: 1em; font-weight: bold;">
         {{user.firstName}} {{user.lastName}}
     </p>
     <p>
         {{user.email}}
-    </p>
-    
+    </p>-->
 </mat-card>
+<!-- </div> -->

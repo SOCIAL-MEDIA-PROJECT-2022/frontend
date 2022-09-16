@@ -20,6 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundError } from 'rxjs';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MatCardModule } from '@angular/material/card';
+import { MyCardComponent } from './components/my-card/my-card.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NavbarComponent,
     UserInitialsPipe,
     ProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MyCardComponent,
   ],
   imports: [
     BrowserModule,
