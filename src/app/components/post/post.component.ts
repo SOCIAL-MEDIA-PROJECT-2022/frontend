@@ -30,14 +30,15 @@ export class PostComponent implements OnInit {
  // userLike : Likes;
 
 
-  likesLength = Object.keys(Likes).length
-  counter : number = 0;
+  //likesLength = Object.keys(Likes).length
+  postLikesP : number;
   postID : number = 0;
 
   constructor(private postService: PostService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.postID = this.post.id
+    this.postLikesP = (this.post.likes).length
   }
 
   toggleReplyToPost = () => {
