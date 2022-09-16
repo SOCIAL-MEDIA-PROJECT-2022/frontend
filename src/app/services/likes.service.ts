@@ -15,9 +15,9 @@ export class LikesService {
 
   constructor(private http: HttpClient) { }
 
-  updateLikes(id: number, id2: number): Observable<Post> {
+  updateLikes(id: number, id2: number): Observable<any> {
     const likes = {postId:id, userId:id2};
-    return this.http.patch<Post>(`${this.postUrl}`, likes, {headers: environment.headers, withCredentials: environment.withCredentials})
+    return this.http.patch<any>(`${this.postUrl}`, likes, {headers: environment.headers, withCredentials: environment.withCredentials})
   }
   
 }
