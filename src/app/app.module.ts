@@ -26,10 +26,6 @@ import { MyCardComponent } from './components/my-card/my-card.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { FoundUsersComponent } from './components/found-users/found-users.component';
-
-import { FollowComponent } from './components/follow/follow.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchFeedPageComponent } from './components/search-feed-page/search-feed-page.component';
 
@@ -49,13 +45,8 @@ import { SearchFeedPageComponent } from './components/search-feed-page/search-fe
     MyCardComponent,
     SearchResultsComponent,
     FoundUsersComponent,
-
-    FollowComponent,
-    SearchBarComponent,
-
     SearchBarComponent,
     SearchFeedPageComponent,
-
   ],
   imports: [
     BrowserModule,
