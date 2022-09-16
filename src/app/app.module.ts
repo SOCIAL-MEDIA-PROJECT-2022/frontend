@@ -30,6 +30,8 @@ import { FoundUsersComponent } from './components/found-users/found-users.compon
 import { FollowComponent } from './components/follow/follow.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchFeedPageComponent } from './components/search-feed-page/search-feed-page.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     FollowComponent,
     SearchBarComponent,
 
+    SearchBarComponent,
+    SearchFeedPageComponent,
   ],
   imports: [
     BrowserModule,
