@@ -1,0 +1,15 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;            
+    overflow: hidden;
+}
+
+.header {
+    position: sticky;
+}
+
+.post-feed {
+    flex: 1 1 auto;     
+    overflow-y: auto;     
+}

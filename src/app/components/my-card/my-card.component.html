@@ -13,14 +13,14 @@
     <mat-grid-tile id="my-card-header-and-handle"
       [colspan]="4" [rowspan]="1">
         <div>
-          <h1><strong>Ethana McGillucus</strong></h1>
-          <p>@McGillicuttyEnterprises</p>
+          <h1><strong>{{ user.firstName }} {{ user.lastName> }}</strong></h1>
+          <p>{{ user.email }}</p>
         </div>
     </mat-grid-tile>
 
     <mat-grid-tile id="my-card-avatar"
     [colspan]="1" [rowspan]="1">
-      <img mat-card-image src="../../../assets/images/edit-my-Profile.png" alt="Image of Avatar">
+      <img mat-card-image src="../../../assets/images/BigDogMatt.webp" alt="Image of Avatar">
     </mat-grid-tile>
 
     <mat-grid-tile id="about-me"
