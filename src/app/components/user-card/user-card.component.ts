@@ -1,6 +1,6 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
-import {MatCardModule} from '@angular/material/card'; 
-import {MatButtonModule} from '@angular/material/button'; 
+import { MatCardModule } from '@angular/material/card'; 
+import { MatButtonModule } from '@angular/material/button'; 
 import User from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,13 +13,14 @@ export class UserCardComponent implements OnInit {
 
   user: User = {} as User;
 
-  constructor(private authService: AuthService) { }
+  constructor (private authService: AuthService) {
+
+    }
 
   ngOnInit(): void {
     this.user = this.authService.currentUser
     //API call for profile table to display here
   }
-  
 
 
   // ngOnChanges(): void {

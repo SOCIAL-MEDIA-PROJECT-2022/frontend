@@ -7,6 +7,7 @@ import User from '../models/User';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   authUrl: string = `${environment.baseUrl}/auth`;
   userUrl: string = `${environment.baseUrl}/user`;

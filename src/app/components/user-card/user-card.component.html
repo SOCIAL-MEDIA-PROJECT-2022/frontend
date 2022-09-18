@@ -1,35 +1,85 @@
-<!-- <div style="
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-"> -->
+
+<div class="card-container">
+    <mat-grid-list cols="8" rowHeight="100px">
+        <mat-grid-tile class="my-card-pic"
+        [colspan]="3" [rowspan]="4">
+            <mat-card>
+                <img mat-card-image src="../../../../src/assets/images/BigDogMatt.jpeg" alt="Photo of my boy Matt">
+                <mat-card-footer>Member Since Jan, 2017</mat-card-footer>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile class="my-card-header-and-handle"
+        [colspan]="5" [rowspan]="1">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                    <mat-card-title>Ethana McGillucus</mat-card-title>
+                    <mat-card-subtitle>@McGillicuttyEnterprises</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile class="about-me"
+        [colspan]="5" [rowspan]="2">
+            <mat-card-content>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem in a tenetur nam magni optio incidunt consequuntur excepturi quis, accusamus voluptates, delectus est alias reprehenderit.
+            </mat-card-content>
+        </mat-grid-tile>
+
+        <mat-grid-tile 
+        [colspan]="5" [rowspan]="1">
+            <h2>Something Fun</h2>
+        </mat-grid-tile>
+
+        <mat-grid-tile 
+        [colspan]="2" [rowspan]="1">
+            <h2>Followers</h2>
+        </mat-grid-tile>
+
+        <mat-grid-tile 
+        [colspan]="2" [rowspan]="1">
+            <h2>Posts</h2>
+        </mat-grid-tile>
+
+        <mat-grid-tile 
+        [colspan]="2" [rowspan]="1">
+            <h2>Comments</h2>
+        </mat-grid-tile>
+
+        <mat-grid-tile 
+        [colspan]="2" [rowspan]="1">
+            <h2>Uploads</h2>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+
+<!--
 <mat-card class="user-card" style="width: 500px;">
     <mat-card-title>
         Matt Myers     
-        <!-- {{user.firstName}} {{user.lastName}} -->
+        {{user.firstName}} {{user.lastName}}
     </mat-card-title>
     <mat-card-subtitle>@BigDogMatty</mat-card-subtitle>
     <div class="user-circle"></div>
     <mat-divider></mat-divider>
     <mat-card-content>
 
-
     </mat-card-content>
 
     <mat-card-actions align="end">
         <button mat-raised-button>Submit</button>
-        <button mat-flat-button>Cancel</button>
+        <button mat-flat-button>Cancel</button>g
     </mat-card-actions>
 
-
-<!--
     <p style="padding-top: 1em; font-weight: bold;">
         {{user.firstName}} {{user.lastName}}
     </p>
     <p>
         {{user.email}}
-    </p>-->
+    </p>
 </mat-card>
-<!-- </div> -->
+</div> -->

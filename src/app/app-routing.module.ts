@@ -11,9 +11,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "post-feed", component: PostFeedPageComponent},
-  { path: "profile", component: MyCardComponent},
-  { path: "my-card", component: MyCardComponent}
-
+  // { path: "my-card", component: MyCardComponent}
 ];
 
 @NgModule({

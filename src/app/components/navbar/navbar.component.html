@@ -1,9 +1,10 @@
 <p>
-    <mat-toolbar>
-        <span class="social-button"[routerLink]="['/post-feed']" mat-button (click)="home()">Social Media</span>
+    <mat-toolbar color="primary">
+        <span class="social-button"[routerLink]="['/post-feed']" mat-button (click)="home()">SoCal Media Mites</span>
         <span class="spacer"></span>
-        <button class = "home-button" mat-button (click)="home()">Home</button>
-        <button class = "profile-button" mat-button (click)="profile()" ><img class = "profile-img" src="https://revature.com/wp-content/uploads/2017/08/rev-logo-2.png" /></button>   
+        <button class = "home-button" mat-button (click)="home()">Post Feed</button>
+        <button class = "my-card-button" mat-button (click)="openMyCard()">My Card</button>
         <button mat-button (click)="logout();">Logout</button>
     </mat-toolbar>
-</p>
+</p>    
+

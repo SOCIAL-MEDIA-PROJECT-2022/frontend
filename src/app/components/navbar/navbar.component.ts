@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { MyCardComponent } from '../my-card/my-card.component';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +12,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit{
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    public dialog: MatDialog) { }
   
   ngOnInit(): void {
   }
@@ -18,17 +23,26 @@ export class NavbarComponent implements OnInit{
   ngOnDestroy() {
   }
 
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['login']);
+  home(){
+    this.router.navigate(['post-feed'])
+  }
+
+  openMyCard() {
+
+    const dialogCfg = new MatDialogConfig();
+    // dialogCfg.disableClose= true;
+    dialogCfg.autoFocus = true;
+
+    this.dialog.open(MyCardComponent, dialogCfg);
   }
 
   profile(){
     this.router.navigate(['profile']);
   }
 
-  home(){
-    this.router.navigate(['post-feed'])
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['login']);
   }
 
 }

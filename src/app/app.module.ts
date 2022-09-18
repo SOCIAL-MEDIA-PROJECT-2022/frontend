@@ -22,7 +22,7 @@ import { NotFoundError } from 'rxjs';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MatCardModule } from '@angular/material/card';
 import { MyCardComponent } from './components/my-card/my-card.component';
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -47,9 +47,9 @@ import { MyCardComponent } from './components/my-card/my-card.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: PostFeedPageComponent }, //empty string on path indicates root area or home page which I am assumiong is the FeedPageComponent.
-      { path: 'profile', component: ProfileComponent },
       { path: 'comment', component: CommentComponent },
       { path: 'post', component: PostComponent },
       { path: '**', component: NotFoundComponent }
