@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import Profile from '../models/Profile';
 import User from '../models/User';
 
 @Injectable({
@@ -12,6 +13,7 @@ export class AuthService {
   authUrl: string = `${environment.baseUrl}/auth`;
   userUrl: string = `${environment.baseUrl}/user`;
   currentUser: User;
+  currentProfile: Profile
 
   constructor(private http: HttpClient) {}
 
@@ -23,6 +25,7 @@ export class AuthService {
     });
     res.subscribe((data) => {
       this.currentUser = data;
+      this.currentProfile.user = data
     });
     return res;
   }

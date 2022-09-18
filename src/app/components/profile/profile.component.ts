@@ -3,8 +3,14 @@ import { Router } from '@angular/router';
 import User from 'src/app/models/User';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormControlName,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ProfileService } from 'src/app/services/profile.service';
+import Profile from 'src/app/models/Profile';
 
 @Component({
   selector: 'app-profile',
@@ -13,8 +19,12 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
   user: User = {} as User;
+  profile: Profile = {} as Profile;
 
-  constructor(private authService: AuthService, private profileService: ProfileService) {}
+  constructor(
+    private authService: AuthService,
+    private profileService: ProfileService
+  ) {}
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
@@ -27,18 +37,10 @@ export class ProfileComponent implements OnInit {
     password: new FormControl(''),
   });
 
-  onSubmit($event: any) {
-    console.log("Submit was clicked!", $event);
+  onSubmit(e: any): void {
+    e.preventDefault();
+    console.log(this.user);
+    this.profileService.update(this.user).subscribe();
   }
-
-  
-  // onSubmit(e: any): void {
-  //   e.preventDefault();
-  //   console.log(this.user);
-  //   this.profileService
-  //     .update(this.user 
-  //     )
-  //     .subscribe( );
-  // }
 }
 
