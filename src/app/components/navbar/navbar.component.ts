@@ -28,7 +28,6 @@ export class NavbarComponent implements OnInit{
   }
 
   openMyCard() {
-
     const dialogCfg = new MatDialogConfig();
     // dialogCfg.disableClose= true;
     dialogCfg.autoFocus = true;
