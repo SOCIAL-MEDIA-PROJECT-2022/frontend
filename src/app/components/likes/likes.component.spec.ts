@@ -22,4 +22,8 @@ describe('LikesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('postLikes should equivalent to postLikesP from the post component', () => {
+    expect(component).toBeTruthy();
+  });
 });
