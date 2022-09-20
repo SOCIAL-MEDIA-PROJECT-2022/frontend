@@ -29,32 +29,3 @@ export class MyCardComponent implements OnInit {
     this.user = this.authService.currentUser;
   }
 }
-
-/*
-@Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-
-export class MyCardComponent {
-  user: User = {} as User;
-  posts: any;
-  private url = 'http://jsonplaceholder.typicode.com/posts' ;
-  memaw: String = 'Ethana';
-  pepaw: String = "McGillicus"
-  pemale: String = "info@mcgilli-cutty.com";
-
-constructor (private http: HttpClient) {
-  http.get(this.url)
-  .subscribe(response => {
-    this.posts = response;
-  });
-}
-
-createPost(input:  HTMLInputElement) {
-  let post = { title: input.value };
-  this.http.post(this.url, JSON.stringify(post))
-  .subscribe(response => {
-    console.log(response);
-});
-}
-*/
