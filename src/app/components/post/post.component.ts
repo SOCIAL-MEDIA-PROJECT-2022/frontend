@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import Likes from 'src/app/models/Likes';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from 'src/app/services/post.service';
@@ -19,18 +18,6 @@ export class PostComponent implements OnInit {
   @Input('post') post: Post
   replyToPost: boolean = false
 
-  
-  //Test
-  
-  //
-
-  
-  //Likes will assign length of response to value later
-  //likes : number = 0;
- // userLike : Likes;
-
-
-  //likesLength = Object.keys(Likes).length
   postLikesP : number;
   postID : number = 0;
 
@@ -45,10 +32,6 @@ export class PostComponent implements OnInit {
     this.replyToPost = !this.replyToPost
   }
   
-
-  /*dislikePost = () => {
-    this.likes--;
-  }*/
 
   submitReply = (e: any) => {
     e.preventDefault()

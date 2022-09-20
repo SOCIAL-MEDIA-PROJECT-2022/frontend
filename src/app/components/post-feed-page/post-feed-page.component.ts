@@ -1,8 +1,6 @@
-import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import Likes from 'src/app/models/Likes';
 import Post from 'src/app/models/Post';
-import User from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostService } from 'src/app/services/post.service';
 
@@ -30,11 +28,7 @@ export class PostFeedPageComponent implements OnInit {
       (response) => {
         this.posts = response
         console.log(response)
-       /* response.map((responses) => {
-          console.log(responses.id)
-          this.likes = (responses.likes).length
-          console.log("likes: " + this.likes)
-      });*/
+ 
       })
     
   }
