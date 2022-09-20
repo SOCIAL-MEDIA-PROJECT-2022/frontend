@@ -1,19 +1,25 @@
 <app-navbar></app-navbar>
-<body>
 
-<!-- <div class="sidebyside">
-  <app-user-card></app-user-card>
-</div> -->
+<ul class="list-group">
+  <li 
+  *ngFor="let post of posts"
+  class="list-group-item">
+  {{ post.title }}
+  </li>
+</ul>
 
-<div class="container">
+
+
+
+<!-- <div class="container">
   <div class="title">
     <h2>Edit {{ user.firstName }}'s Profile</h2>
   </div>
   <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit($event)">
-  <!-- <div class="form-group">
+  <div class="form-group">
             <label for="handle">@handle</label>
             <input id="handle" type="text" class="form-control" formControlName="handle">
-        </div> -->
+        </div>
   <div class="user-details">
     <div class="form-group">
       <label for="firstName">First Name</label>
@@ -55,18 +61,12 @@
       />
     </div>
   </div>
-
-
   <button
     *ngIf="user.firstName && user.lastName"
     class="btn btn-primary"
-    type="submit"
-  >
-    Submit
+    type="submit">Submit
   </button>
 </form>
-</div>
-
-</body>
+</div> -->
 
 

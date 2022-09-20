@@ -1,4 +1,4 @@
-
+<mat-dialog-content>
 <div class="my-card-container">
   <mat-grid-list cols="8" rowHeight="100px">
 
@@ -13,10 +13,8 @@
     <mat-grid-tile id="my-card-header-and-handle"
       [colspan]="4" [rowspan]="1">
         <div>
-          <h1><strong>FirstName Unt LastName</strong></h1>
-          <p>Jake@Progressive.flom</p>
-          <!-- <h1><strong>{{ user.firstName }} {{ user.lastName> }}</strong></h1>
-          <p>{{ user.email }}</p> -->
+          <h1><strong>{{ memaw }} {{ pepaw }}</strong></h1>
+          <p>{{ pemale }}</p>
         </div>
     </mat-grid-tile>
 
@@ -58,8 +56,25 @@
       [colspan]="2" [rowspan]="1">
       <h2>Uploads</h2>
     </mat-grid-tile>
+
+    <mat-grid-tile 
+      [colspan]="8" [rowspan]="1"
+      *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]">
+      Post {{ num }}
+    </mat-grid-tile>
+    
+    <!-- <cdk-virtual-scroll-viewport>
+      <mat-grid-tile 
+        [colspan]="8" [rowspan]="1">
+        *cdkVirtualFor="let post of posts">
+        {{ "hey" }}
+      </mat-grid-tile>
+    </cdk-virtual-scroll-viewport> -->
+      <!-- {{ post.title }} -->
+
   </mat-grid-list>
 </div>
+</mat-dialog-content>
 
 <!--
 <div class="flex-container">

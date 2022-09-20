@@ -11,36 +11,53 @@ import {
 } from '@angular/forms';
 import { ProfileService } from 'src/app/services/profile.service';
 import Profile from 'src/app/models/Profile';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
-export class ProfileComponent implements OnInit {
-  user: User = {} as User;
-  profile: Profile = {} as Profile;
 
-  constructor(
-    private authService: AuthService,
-    private profileService: ProfileService
-  ) {}
+export class ProfileComponent {
 
-  ngOnInit(): void {
-    this.user = this.authService.currentUser;
-  }
+  posts: any;
 
-  profileForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl(''),
-  });
-
-  onSubmit(e: any): void {
-    e.preventDefault();
-    console.log(this.user);
-    this.profileService.update(this.user).subscribe();
+  constructor (http: HttpClient) {
+    http.get('http://jsonplaceholder.typicode.com/posts')
+    .subscribe(response => {
+      this.posts = response;
+    });
   }
 }
+
+
+
+
+// export class ProfileComponent implements OnInit {
+//   user: User = {} as User;
+//   profile: Profile = {} as Profile;
+
+//   constructor(
+//     private authService: AuthService,
+//     private profileService: ProfileService
+//   ) {}
+
+//   ngOnInit(): void {
+//     this.user = this.authService.currentUser;
+//   }
+
+//   profileForm = new FormGroup({
+//     firstName: new FormControl('', Validators.required),
+//     lastName: new FormControl('', Validators.required),
+//     email: new FormControl('', Validators.required),
+//     password: new FormControl(''),
+//   });
+
+//   onSubmit(e: any): void {
+//     e.preventDefault();
+//     console.log(this.user);
+//     this.profileService.update(this.user).subscribe();
+//   }
+//   }
 

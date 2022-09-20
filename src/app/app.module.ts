@@ -23,6 +23,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MatCardModule } from '@angular/material/card';
 import { MyCardComponent } from './components/my-card/my-card.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FollowersComponent } from './components/followers/followers.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     ProfileComponent,
     NotFoundComponent,
     MyCardComponent,
+    FollowersComponent,
   ],
   imports: [
     BrowserModule,

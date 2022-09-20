@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { MyCardComponent } from '../my-card/my-card.component';
+import { PostFeedPageComponent } from '../post-feed-page/post-feed-page.component';
 
 @Component({
   selector: 'app-navbar',
@@ -26,6 +27,10 @@ export class NavbarComponent implements OnInit{
   home(){
     this.router.navigate(['post-feed'])
   }
+
+  // openTestFeed() {
+  //   this.dialog.open(PostFeedPageComponent);
+  // }
 
   openMyCard() {
     const dialogCfg = new MatDialogConfig();

@@ -1,6 +1,6 @@
 import User from './User';
 
-export default class Proile {
+export default class Profile {
   id: number;
   aboutMe: string;
   hobbies: string;
