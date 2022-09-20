@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 html,
+
+:root{
+  background-color: #cac2a9;
+}
+
 body {
   height: 100%;
 }
@@ -8,7 +13,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
-  background: #e2e2e2;
+  background: #cac2a9;
 }
 .app-header {
   justify-content: space-between;
