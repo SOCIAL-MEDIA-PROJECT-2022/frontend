@@ -1,3 +1,9 @@
-.login-wrapper{
-    position: left;
+body{
+    position:fixed;
+}
+
+.toggle-button{
+    position:absolute;
+    bottom: 2em;
+    left: 2em;
 }

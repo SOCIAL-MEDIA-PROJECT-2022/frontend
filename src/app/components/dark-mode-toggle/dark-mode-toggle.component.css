@@ -1,0 +1,18 @@
+.switch {
+    padding: 10px;
+    /*border: none;*/
+    border-radius: 2px;
+    color: var(--btn-txt-color);
+    background-color: var(--btn-bg-color);   
+}
+
+.switch:hover{
+    cursor:pointer;
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #252222;
+    --btn-txt-color: rgb(46, 43, 43);
+    --btn-bg-color: rgb(20, 211, 195);
+  }
