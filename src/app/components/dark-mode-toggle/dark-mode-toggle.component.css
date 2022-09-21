@@ -23,14 +23,14 @@ body {
     background: #292929;
 }
 
-.center {
+.switchCenter {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-button[type="button"] {
+input[type="checkbox"] {
     position: relative;
     width: 120px;
     height: 40px;
@@ -56,6 +56,6 @@ input[type="checkbox"]:before {
     transition: .5s;
 }
 
-input:checked[type="button"]:before {
-    Left: 40px;
+input:checked[type="checkbox"]:before {
+    left: 40px;
 }
