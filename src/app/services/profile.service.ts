@@ -23,10 +23,11 @@ export class ProfileService {
     });
   }
   
-  getProfile(): Observable<Profile> {
+  getProfile(id: number): Observable<Profile> {
     //console.log(user)
     //let userId: number = user.id;
-    return this.http.get<Profile>(`${this.profileUrl}/5`, {headers: environment.headers, withCredentials: environment.withCredentials} )
+    let requestUrl: string = this.profileUrl + "/" + id
+    return this.http.get<Profile>(requestUrl, {headers: environment.headers, withCredentials: environment.withCredentials} )
   }
 
   getAllProfiles(): Observable<Profile[]>{

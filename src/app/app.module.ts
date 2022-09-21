@@ -23,6 +23,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MatCardModule } from '@angular/material/card';
 import { MyCardComponent } from './components/my-card/my-card.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { FoundUsersComponent } from './components/found-users/found-users.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     ProfileComponent,
     NotFoundComponent,
     MyCardComponent,
+    SearchResultsComponent,
+    FoundUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: PostFeedPageComponent }, //empty string on path indicates root area or home page which I am assumiong is the FeedPageComponent.
-      { path: 'comment', component: CommentComponent },
+      { path: 'found-users', component: FoundUsersComponent },
       { path: 'post', component: PostComponent },
       { path: '**', component: NotFoundComponent }
     ])

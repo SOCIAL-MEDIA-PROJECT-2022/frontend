@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;            
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+.found-users {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1 1 auto;      */
+    overflow-y: auto;     
+}

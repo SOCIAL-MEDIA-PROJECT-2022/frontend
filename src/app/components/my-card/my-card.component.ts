@@ -15,12 +15,14 @@ import {
 @Component({
   selector: 'app-my-card',
   templateUrl: './my-card.component.html',
-  styleUrls: ['./my-card.component.css'],
+  styleUrls: ['./my-card.component.css']
 })
 
 export class MyCardComponent implements OnInit {
   user: User = {} as User;
   profile: Profile = {} as Profile;
+  showEdit: Boolean = false;
+  showInfo: Boolean = true;
 
   profileForm = new FormGroup({
        firstName: new FormControl('', Validators.required),
@@ -36,7 +38,7 @@ export class MyCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
-    this.profileService.getProfile().subscribe(
+    this.profileService.getProfile(this.authService.currentUser.id).subscribe(
       (response) => {
         this.profile = response
         //console.log(this.profile);
@@ -49,7 +51,7 @@ export class MyCardComponent implements OnInit {
   }
 
   getUserProfile(){
-    this.profileService.getProfile().subscribe(
+    this.profileService.getProfile(this.user.id).subscribe(
       (response) => {
         this.profile = response
         console.log(this.profile);
@@ -65,5 +67,12 @@ export class MyCardComponent implements OnInit {
         this.profileService.update(this.user).subscribe();
        }
 
+  showEditProfile(){
+    this.showEdit = !this.showEdit; 
+    this.showInfo = !this.showInfo;
+    console.log("clicked")
+  }
+
 
 }
+

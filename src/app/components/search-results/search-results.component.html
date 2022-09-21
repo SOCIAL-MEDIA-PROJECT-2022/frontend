@@ -1,0 +1,8 @@
+<div class="container" *ngFor="let card of cards">
+    <div class="search-container">
+        <div class="found-name">
+            {{ card.firstName }} {{ card.lastName }}
+        </div>
+        <button (click)="showCard(card)">Profile</button>
+    </div>
+</div>
