@@ -24,7 +24,7 @@ export class SearchBarComponent implements OnInit {
 
   onSubmit(e: any): void {
     e.preventDefault()
-
+    this.router.onSameUrlNavigation = 'reload';
     this.searchBarService.search(this.searchForm.value.email || "")
       .subscribe(
         (response) => {
