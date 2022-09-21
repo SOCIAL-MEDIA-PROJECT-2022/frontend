@@ -31,6 +31,7 @@ export class ResetPasswordComponent implements OnInit {
         .subscribe((response) => {
           if (response.status == 200) {
             this.error_message = 'Success!';
+            this.resetForm.reset();
           }
         });
     } else {
