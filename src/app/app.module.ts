@@ -28,6 +28,7 @@ import { SearchResultsComponent } from './components/search-results/search-resul
 import { FoundUsersComponent } from './components/found-users/found-users.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchFeedPageComponent } from './components/search-feed-page/search-feed-page.component';
+import { UserSearchResultsComponent } from './components/user-search-results/user-search-results.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { SearchFeedPageComponent } from './components/search-feed-page/search-fe
     FoundUsersComponent,
     SearchBarComponent,
     SearchFeedPageComponent,
+    UserSearchResultsComponent,
   ],
   imports: [
     BrowserModule,

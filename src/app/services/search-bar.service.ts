@@ -14,8 +14,9 @@ export class SearchBarService {
 
   constructor(private http: HttpClient) { }
 
-  search(searchBar: string): Observable<any>{
-    let searchUrl=this.geturl+searchBar
-    return this.http.get<any>(`${searchUrl}`, { headers: environment.headers, withCredentials: environment.withCredentials})
+  search(searchBar: string): Observable<any> {
+    console.log(searchBar)
+    let searchUrl = this.geturl + searchBar
+    return this.http.get<any>(`${searchUrl}`, { headers: environment.headers, withCredentials: environment.withCredentials })
   }
 }

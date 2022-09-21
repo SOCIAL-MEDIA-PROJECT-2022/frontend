@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { SearchBarService } from 'src/app/services/search-bar.service';
 import User from 'src/app/models/User'
 import { SearchService } from 'src/app/services/search.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class SearchBarComponent implements OnInit {
   })
 
 
-  constructor(private searchBarService: SearchBarService, private searchService: SearchService) { }
+  constructor(private searchBarService: SearchBarService, private searchService: SearchService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,9 +29,12 @@ export class SearchBarComponent implements OnInit {
       .subscribe(
         (response) => {
           this.searchService.setSearchUser(response)
+          this.router.navigate(['user-search-results'])
         })
+  }
 
-
+  searchFeed() {
+    this.router.navigate(['user-search-results'])
   }
 
 }
