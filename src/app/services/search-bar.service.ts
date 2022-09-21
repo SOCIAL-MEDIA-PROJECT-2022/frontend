@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import User from '../models/User';
 
 
 
@@ -14,9 +15,10 @@ export class SearchBarService {
 
   constructor(private http: HttpClient) { }
 
-  search(searchBar: string): Observable<any> {
-    console.log(searchBar)
+  search(searchBar: string): Observable<User[]> {
     let searchUrl = this.geturl + searchBar
-    return this.http.get<any>(`${searchUrl}`, { headers: environment.headers, withCredentials: environment.withCredentials })
+    console.log("Got to search bar service")
+    console.log(searchUrl)
+    return this.http.get<User[]>(`${searchUrl}`, { headers: environment.headers, withCredentials: environment.withCredentials })
   }
 }

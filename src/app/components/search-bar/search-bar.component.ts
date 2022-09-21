@@ -29,12 +29,12 @@ export class SearchBarComponent implements OnInit {
       .subscribe(
         (response) => {
           this.searchService.setSearchUser(response)
-          this.router.navigate(['user-search-results'])
+          this.router.navigate(['search-feed-page'])
         })
   }
 
   searchFeed() {
-    this.router.navigate(['user-search-results'])
+    this.router.navigate(['search-feed-page'])
   }
 
 }

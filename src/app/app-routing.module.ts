@@ -6,7 +6,7 @@ import { MyCardComponent } from './components/my-card/my-card.component';
 import { PostFeedPageComponent } from './components/post-feed-page/post-feed-page.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
-import { UserSearchResultsComponent } from './components/user-search-results/user-search-results.component';
+import { SearchFeedPageComponent } from './components/search-feed-page/search-feed-page.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: "found-users", component: FoundUsersComponent},
   { path: "profile", component: ProfileComponent},
   // { path: "my-card", component: MyCardComponent}
-  { path: "user-search-results", component: UserSearchResultsComponent }
+  { path: "user-search-results", component: UserSearchResultsComponent },
+  { path: "search-feed-page", component: SearchFeedPageComponent }
 ];
 
 @NgModule({
