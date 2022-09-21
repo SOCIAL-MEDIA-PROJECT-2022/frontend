@@ -23,8 +23,14 @@ export class ProfileService {
     });
   }
   
-  getProfile(user:User): Observable<Profile> {
-    return this.http.get<Profile>(`${this.profileUrl}/update`, {headers: environment.headers, withCredentials: environment.withCredentials} )
+  getProfile(): Observable<Profile> {
+    //console.log(user)
+    //let userId: number = user.id;
+    return this.http.get<Profile>(`${this.profileUrl}/5`, {headers: environment.headers, withCredentials: environment.withCredentials} )
+  }
+
+  getAllProfiles(): Observable<Profile[]>{
+    return this.http.get<Profile[]>(`${this.profileUrl}`, {headers: environment.headers, withCredentials: environment.withCredentials} )
   }
 
 }

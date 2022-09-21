@@ -13,7 +13,7 @@ export class AuthService {
   authUrl: string = `${environment.baseUrl}/auth`;
   userUrl: string = `${environment.baseUrl}/user`;
   currentUser: User;
-  currentProfile: Profile
+  //currentProfile: Profile;
 
   constructor(private http: HttpClient) {}
 
@@ -25,8 +25,10 @@ export class AuthService {
     });
     res.subscribe((data) => {
       this.currentUser = data;
-      this.currentProfile.user = data
+      console.log(this.currentUser);
+      //this.currentProfile.user = data
     });
+    console.log(res);
     return res;
   }
 
