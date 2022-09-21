@@ -15,7 +15,10 @@ export class SearchFeedPageComponent implements OnInit {
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
-    this.users = this.searchService.getSearchUsers()
-    console.log(this.users)
+    this.searchService.searchUsers.subscribe(
+      value =>{
+        this.users = value;
+      }
+    )
   }
 }

@@ -1,21 +1,11 @@
 import { Injectable } from '@angular/core';
+import {BehaviorSubject} from "rxjs";
 import User from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  searchUsers: User[]
+  public searchUsers: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 
-
-
-  constructor() { }
-
-  getSearchUsers(): User[] {
-    return this.searchUsers
-  }
-
-  setSearchUser(user: User[]): void {
-    this.searchUsers = user
-  }
 }
