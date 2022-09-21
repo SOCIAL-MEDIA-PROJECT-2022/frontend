@@ -5,15 +5,17 @@ import User from '../models/User';
   providedIn: 'root'
 })
 export class SearchService {
-  searchUsers:User[]
+  searchUsers: User[]
+
 
 
   constructor() { }
 
-  getSearchUsers():User[]{
+  getSearchUsers(): User[] {
     return this.searchUsers
   }
-  setSearchUser(user:User[]):void{
+
+  setSearchUser(user: User[]): void {
     this.searchUsers = user
   }
 }

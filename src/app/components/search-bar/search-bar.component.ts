@@ -15,22 +15,22 @@ export class SearchBarComponent implements OnInit {
     email: new FormControl(''),
   })
 
-  
-  constructor(private searchBarService:SearchBarService, private searchService:SearchService ) { }
+
+  constructor(private searchBarService: SearchBarService, private searchService: SearchService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(e: any): void {
     e.preventDefault()
-    this.searchBarService.search(this.searchForm.value.email || "" )
-    .subscribe(
-      (response) => {
-        this.searchService.setSearchUser(response) 
-        
-      })
-      
 
-}
+    this.searchBarService.search(this.searchForm.value.email || "")
+      .subscribe(
+        (response) => {
+          this.searchService.setSearchUser(response)
+        })
+
+
+  }
 
 }
