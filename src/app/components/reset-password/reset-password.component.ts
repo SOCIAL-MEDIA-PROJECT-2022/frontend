@@ -26,13 +26,16 @@ export class ResetPasswordComponent implements OnInit {
     e.preventDefault();
     if (this.resetForm.value.npassword === this.resetForm.value.cpassword) {
       console.log(this.user.email);
-      this.authService.resetpassword(
-        this.user.email,
-        this.resetForm.value.npassword || ''
-      );
+      this.authService
+        .resetpassword(this.user.email, this.resetForm.value.npassword || '')
+        .subscribe((response) => {
+          if (response.status == 200) {
+            this.error_message = 'Success!';
+          }
+        });
     } else {
       this.resetForm.setErrors({ error: true });
-      this.error_message = "They don't match";
+      this.error_message = "Passwords don't match";
     }
   }
 }

@@ -50,9 +50,9 @@ export class AuthService {
     const res = this.http.patch<any>(`${this.authUrl}/resetPassword`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials,
-    });
-    res.subscribe((data) => {
-      console.log(data);
+    observe:'response'}, );
+    res.subscribe((response) => {
+      console.log(response.status);
     });
     return res;
   }
