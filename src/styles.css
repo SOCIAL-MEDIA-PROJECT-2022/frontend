@@ -19,6 +19,7 @@ body{
   --bkg-color: #cac2a9;
   --btn-txt-color: white;
   --btn-bg-color: rgb(11, 88, 160);
+  --form-text-color: #272727;
 }
 body {
   background: var(--bkg-color);
@@ -201,6 +202,7 @@ body.dark-mode {
   --bkg-color: #252222;
   --btn-txt-color: rgb(46, 43, 43);
   --btn-bg-color: rgb(20, 211, 195);
+  --form-text-color:#cac2a9;
 }
 
 body.light-mode {
