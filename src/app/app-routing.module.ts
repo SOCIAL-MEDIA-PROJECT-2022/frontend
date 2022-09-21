@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FoundUsersComponent } from './components/found-users/found-users.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyCardComponent } from './components/my-card/my-card.component';
 import { PostFeedPageComponent } from './components/post-feed-page/post-feed-page.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "post-feed", component: PostFeedPageComponent},
+  { path: "found-users", component: FoundUsersComponent},
   { path: "profile", component: ProfileComponent}
   // { path: "my-card", component: MyCardComponent}
 ];

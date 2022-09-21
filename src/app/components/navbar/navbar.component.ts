@@ -11,6 +11,7 @@ import { PostFeedPageComponent } from '../post-feed-page/post-feed-page.componen
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit{
 
   constructor(
@@ -28,9 +29,9 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(['post-feed'])
   }
 
-  // openTestFeed() {
-  //   this.dialog.open(PostFeedPageComponent);
-  // }
+  otherCards() {
+    this.router.navigate(['found-users'])
+  }
 
   openMyCard() {
     const dialogCfg = new MatDialogConfig();
