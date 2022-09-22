@@ -15,8 +15,6 @@ const routes: Routes = [
   { path: "post-feed", component: PostFeedPageComponent},
   { path: "found-users", component: FoundUsersComponent},
   { path: "profile", component: ProfileComponent},
-  // { path: "my-card", component: MyCardComponent}
-  { path: "user-search-results", component: UserSearchResultsComponent },
   { path: "search-feed-page", component: SearchFeedPageComponent }
 ];
 
