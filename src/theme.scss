@@ -20,7 +20,7 @@ $my-theme: mat-light-theme($my-primary, $my-background, $my-foreground);
     $my-accent: mat-palette($mat-amber,800);
     //Post and reply
     $my-foreground: mat-palette($mat-grey,500);
-    $my-background: mat-palette($mat-light-green,800);
+    $my-background: mat-palette($mat-light-blue,800);
     $my-theme: mat-dark-theme($my-primary, $my-background, $my-foreground);
     
     @include angular-material-theme($my-theme);
