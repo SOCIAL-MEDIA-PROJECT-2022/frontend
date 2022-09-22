@@ -25,14 +25,15 @@
       />
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        id="email"
-        type="email"
+      <label for="email">About Me</label>
+      <textarea
+        id="aboutMe"
+        type="text"
         class="form-control"
-        formControlName="email"
-        [(ngModel)]="user.email"
-      />
+        formControlName="aboutMe"
+        [(ngModel)]="user.aboutMe"
+      >
+      </textarea>
     </div>
     <!--<div class="form-group">
       <label for="password">Password</label>
