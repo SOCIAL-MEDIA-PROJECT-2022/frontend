@@ -24,6 +24,7 @@ export class PostFeedPageComponent implements OnInit {
 
   constructor(private postService: PostService, private authService: AuthService, private dMode : DarkModeService) { }
   matColorPostFeed: boolean
+  
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe(
       (response) => {
