@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import Post from 'src/app/models/Post';
-import User from 'src/app/models/User';
 import { AuthService } from 'src/app/services/auth.service';
 import { DarkModeService } from 'src/app/services/dark-mode.service';
 import { PostService } from 'src/app/services/post.service';
@@ -22,8 +21,10 @@ export class PostFeedPageComponent implements OnInit {
   posts: Post[] = [];
   createPost:boolean = false;
 
+
   constructor(private postService: PostService, private authService: AuthService, private dMode : DarkModeService) { }
   matColorPostFeed: boolean
+  
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe(
       (response) => {
@@ -45,7 +46,7 @@ export class PostFeedPageComponent implements OnInit {
 
   submitPost = (e: any) => {
     e.preventDefault();
-    this.postService.upsertPost(new Post(0, this.postForm.value.text || "", this.postForm.value.imageUrl || "", this.authService.currentUser, []))
+    this.postService.upsertPost(new Post(0, this.postForm.value.text || "", this.postForm.value.imageUrl || "", this.authService.currentUser, [], []))
       .subscribe(
         (response) => {
           this.posts = [response, ...this.posts]
