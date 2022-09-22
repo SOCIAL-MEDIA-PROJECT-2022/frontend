@@ -18,7 +18,6 @@ export class DarkModeToggleComponent implements OnInit {
     
     this.dMode.theme.next(!this.dMode.theme.value);
     
-    // this.checkBox();
   }
 
   constructor(private dMode : DarkModeService ) {}

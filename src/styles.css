@@ -4,16 +4,11 @@
 
 html,
 
-
-body {
+body{
   height: 100%;
-}
-body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
-}
-body{
   --text-color: #222;
   --bkg-color: rgb(77, 83, 112);
   --btn-txt-color: rgb(255, 255, 255);
@@ -22,10 +17,9 @@ body{
   --card-bg-color: rgb(220, 221, 204);
   --mat-cards-color: rgb(220, 221, 204);
   --header-color:rgb(48, 57, 99);
-}
-body {
   background: var(--bkg-color);
 }
+
 .app-header {
   justify-content: space-between;
   position: fixed;
