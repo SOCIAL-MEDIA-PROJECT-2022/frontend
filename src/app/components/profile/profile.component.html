@@ -2,7 +2,7 @@
   <div class="title">
     <h2>Edit {{ user.firstName }}'s Profile</h2>
   </div>
-  <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit($event)" ng-show="showForm">
+  <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit($event)" ng-show="showForm" required>
   <div class="user-details">
     <div class="form-group">
       <label for="firstName">First Name</label>
@@ -44,7 +44,13 @@
       />
     </div>-->
   </div>
+  <div>
+    <span class="error" *ngIf="profileForm.invalid">
+      {{ error_message }} <br
+    /></span>
+  </div>
   <button
+    id = "form-button"
     *ngIf="user.firstName && user.lastName && user.email"
     class="btn btn-primary"
     type="submit">Submit

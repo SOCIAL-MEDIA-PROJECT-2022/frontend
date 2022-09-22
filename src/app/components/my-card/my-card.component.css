@@ -21,7 +21,7 @@
 } */
 
 mat-grid-tile {
-    border: 1px solid;
+    /*border: 1px solid;*/
 }
 
 #about-me div {
@@ -39,8 +39,8 @@ mat-grid-tile {
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    margin-right: 175px;
-    /* align-items: left;     */
+    /*margin-right: 175px;
+     align-items: left;     */
 }
 
 #my-card-avatar img {
@@ -53,3 +53,9 @@ mat-grid-tile {
 #my-card-avatar:hover {
     cursor: pointer; 
 }
+
+.profile1{
+    margin-left: 60px;
+    height: 100px;
+}
+

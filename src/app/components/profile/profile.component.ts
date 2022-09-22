@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import User from 'src/app/models/User';
 import Post from 'src/app/models/Post';
@@ -22,6 +22,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProfileComponent implements OnInit {
   user: User = {} as User;
   profile: Profile = {} as Profile;
+  editSuccess:boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -35,15 +36,35 @@ export class ProfileComponent implements OnInit {
   profileForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email]),
     password: new FormControl(''),
     aboutMe: new FormControl('', Validators.required)
   });
 
+  error_message: string;
+
   onSubmit(e: any): void {
     e.preventDefault();
     console.log(this.user);
-    this.profileService.update(this.user).subscribe();
+    
+    this.profileService.update(this.user).subscribe((response) => {
+      if(response.status == 200) {
+        this.error_message = 'Succcess!';
+      }
+    });
+    this.editSuccess=true;
+    this.onClick();
+    
   }
-  }
+
+  @Output("test") test: EventEmitter<any> = new EventEmitter();
+  onClick() {
+      // Send your form
+      this.test.emit("test");
+      console.log("test");
+   }
+
+}
 

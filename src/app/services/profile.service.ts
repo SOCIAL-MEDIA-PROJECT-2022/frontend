@@ -16,11 +16,16 @@ export class ProfileService {
 
   constructor(private http: HttpClient) { }
 
-  update(user: User): Observable<User> {
+  update(user: User): Observable<any> {
     console.log(user);
-    return this.http.put<any>(`${this.userUrl}/update`, user, {
-      headers: environment.headers, withCredentials: environment.withCredentials
+    const res = this.http.put<any>(`${this.userUrl}/update`, user, {
+      headers: environment.headers, withCredentials: environment.withCredentials,
+      observe: 'response'
     });
+    res.subscribe((response) => {
+      console.log(response.status);
+    });
+    return res;
   }
   
   getProfile(id: number): Observable<Profile> {
