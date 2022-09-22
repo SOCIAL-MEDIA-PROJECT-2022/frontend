@@ -5,7 +5,7 @@
 </div>
 
 <div [ngClass]="['sidebyside', 'post-feed-container']">
-    <form class="form" *ngIf="!createPost; else createPostTemplate">
+    <form [class.darkColorMode] = "matColorPostFeed" class="form" *ngIf="!createPost; else createPostTemplate">
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Something on your mind?</mat-label>
             <input matInput (focus)="toggleCreatePost()">
@@ -13,7 +13,7 @@
     </form>
 
     <ng-template #createPostTemplate>
-        <form class="form" [formGroup]="postForm" (ngSubmit)="submitPost($event)">
+        <form [class.darkColorMode] = "matColorPostFeed" class="form alternative" [formGroup]="postForm" (ngSubmit)="submitPost($event)">
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Make a Post</mat-label>
                 <textarea matInput autofocus formControlName="text"></textarea>
@@ -23,8 +23,8 @@
                 <input matInput formControlName="imageUrl">
             </mat-form-field>
             <div align="end">
-                <button mat-raised-button color="warn" (click)="toggleCreatePost()">Cancel</button>
-                <button mat-raised-button color="primary" (click)="submitPost($event)">Post</button>
+                <button mat-raised-button color="foreground" (click)="toggleCreatePost()">Cancel</button>
+                <button mat-raised-button color="warn" (click)="submitPost($event)">Post</button>
             </div>
 
         </form>

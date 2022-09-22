@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -18,9 +19,14 @@ export class CommentComponent implements OnInit {
   @Input('comment') inputComment: Post;
   replyToComment: boolean = false
 
-  constructor(private postService: PostService, private authService: AuthService) { }
-
+  constructor(private postService: PostService, private authService: AuthService, private dMode : DarkModeService) { }
+  matColorPostComment: boolean
   ngOnInit(): void {
+    this.dMode.theme.subscribe(
+      value => {
+        this.matColorPostComment = value
+      }
+    )
   }
 
   toggleReplyToComment = () => {
