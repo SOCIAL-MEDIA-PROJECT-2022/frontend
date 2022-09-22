@@ -1,4 +1,4 @@
-@use '~@angular/material' as mat;
+
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -125,15 +125,8 @@ body {
   width:10em;
   height: 10em;
   border-radius: 7em;
-<<<<<<< HEAD
 
   border: 1px solid #e9e7d8;
-
-=======
-      
-  border: 1px solid #888080;
-     
->>>>>>> ecea84939148c6452a7177b10bc317e24f386829
   margin-bottom: 1em;
 
   background-image: url('./assets/images/favicon.png');
