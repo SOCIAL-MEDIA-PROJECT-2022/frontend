@@ -159,7 +159,11 @@ body {
 .post-feed-container {
   width: 80%;
   margin-top: 1em;
-  
+  color: var(--mat-text-color);
+}
+
+.p {
+  color: var(--mat-text-color);
 }
 
 .full-width {
@@ -194,17 +198,22 @@ body {
 .form {
   margin-bottom: 1em;
   background-color: var(--card-bg-color);
+  color: var(--mat-text-color);
+}
 
+#postText{
+  color: var(--mat-text-color);
 }
 
 .comment-container {
   margin-left: 2em;
-  color: var(--btn-txt-color);
+  color: var(--mat-text-color);
 }
 
 .comment-reply {
   cursor: pointer;
   text-decoration: underline;
+  
 }
 
 .spacer {
@@ -215,7 +224,7 @@ button {
   padding: 10px;
   border: none;
   border-radius: 2px;
-  color: var(--btn-txt-color);
+  color: var(--mat-text-color);
   background-color: var(--btn-bg-color);
 }
 
@@ -229,7 +238,7 @@ body.dark-mode {
   --btn-txt-color: rgb(240, 236, 236);
   --btn-bg-color: rgb(20, 211, 195);
   --card-bg-color: rgb(37, 41, 48);
-  --mat-text-color: #cac2a9;
+  --mat-text-color: #f8f7f4;
   --mat-cards-color: rgb(37, 41, 48);
   --header-color:rgb(26, 27, 29);
   --loginbtn-color: rgb(128, 143, 160);
