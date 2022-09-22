@@ -1,4 +1,4 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<div [class.darkColorMode] = "matColorPostLogin"class="login-wrapper" fxLayout="row" fxLayoutAlign="right center">
   <mat-card class="box">
     <mat-card-header>
       <mat-card-title>Log in</mat-card-title>
@@ -16,4 +16,7 @@
     </form>
     <a class="login-rerout-link" [routerLink]="['/register']">Don't have an account?</a>
   </mat-card>
+</div>
+<div class="toggle-button">
+  <app-dark-mode-toggle></app-dark-mode-toggle>
 </div>

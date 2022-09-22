@@ -1,15 +1,25 @@
+
+
 /* You can add global styles to this file, and also import other style files */
 
 html,
-body {
+
+body{
   height: 100%;
-}
-body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   min-height: 100vh;
-  background: #e2e2e2;
+  --text-color: #222;
+  --bkg-color: rgb(77, 83, 112);
+  --btn-txt-color: rgb(255, 255, 255);
+  --loginbtn-color: rgb(207, 209, 194);
+  --btn-bg-color: rgb(39, 41, 43);
+  --card-bg-color: rgb(220, 221, 204);
+  --mat-cards-color: rgb(220, 221, 204);
+  --header-color:rgb(48, 57, 99);
+  background: var(--bkg-color);
 }
+
 .app-header {
   justify-content: space-between;
   position: fixed;
@@ -68,6 +78,7 @@ body {
   max-width: 300px;
   width: 100%;
 }
+
 .login-wrapper .example-full-width,
 .login-wrapper .btn-block {
   width: 100%;
@@ -84,11 +95,15 @@ body {
 }
 .login-wrapper .mat-card {
   padding: 40px 70px 50px;
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
+
 }
 .login-wrapper .mat-stroked-button {
   border: 1px solid currentColor;
   line-height: 54px;
-  background: #FFF7FA;
+  background-color: var(--loginbtn-color)
+  
 }
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
@@ -103,15 +118,18 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 4em;
+   
 }
-
+.mat-toolbar{
+  color: var(--btn-txt-color);
+  background-color: var(--header-color);
+}
 .user-circle {
   width:10em;
   height: 10em;
   border-radius: 7em;
-      
-  border: 1px solid #888080;
-     
+
+  border: 1px solid #e9e7d8;
   margin-bottom: 1em;
 
   background-image: url('./assets/images/favicon.png');
@@ -122,16 +140,24 @@ body {
   width: 10em;
   text-align: center;
   margin: 1em;
+  color: var(--text-color);
+  background-color: var(--card-bg-color);
 }
 
 .sidebyside {
   display: inline-block;
   vertical-align: top;
+  color: var(--mat-text-color);
 }
 
 .post-feed-container {
   width: 80%;
   margin-top: 1em;
+  color: var(--mat-text-color);
+}
+
+.p {
+  color: var(--mat-text-color);
 }
 
 .full-width {
@@ -148,25 +174,76 @@ body {
 #post-feed {
   width: 60%;
   align-content: center;
+  
+}
+
+
+.mat-card {
+  color: var(--text-color);
+  background-color: var(--mat-cards-color);
+
 }
 
 .post-card {
   margin-bottom: 1em;
+  
 }
 
 .form {
   margin-bottom: 1em;
+  background-color: var(--card-bg-color);
+  color: var(--mat-text-color);
+}
+
+#postText{
+  color: var(--mat-text-color);
 }
 
 .comment-container {
   margin-left: 2em;
+  color: var(--mat-text-color);
 }
 
 .comment-reply {
   cursor: pointer;
   text-decoration: underline;
+  
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  color: var(--mat-text-color);
+  background-color: var(--btn-bg-color);
+}
+
+body:not(.dark-mode-preloading) {
+  transition: all 0.3s linear;
+}
+
+body.dark-mode {
+  --text-color: #eee;
+  --bkg-color: #252222;
+  --btn-txt-color: rgb(240, 236, 236);
+  --btn-bg-color: rgb(20, 211, 195);
+  --card-bg-color: rgb(37, 41, 48);
+  --mat-text-color: #f8f7f4;
+  --mat-cards-color: rgb(37, 41, 48);
+  --header-color:rgb(26, 27, 29);
+  --loginbtn-color: rgb(128, 143, 160);
+}
+
+.post-card .mat-label{
+  color: var(--mat-text-color);
+}
+
+
+body.light-mode {
+  background-color: #cac2a9;
+  color: #2d3436;
 }

@@ -15,7 +15,9 @@ import { CommentComponent } from './components/comment/comment.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import { UserInitialsPipe } from './pipes/user-initials.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 import { LikesComponent } from './components/likes/likes.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { LikesComponent } from './components/likes/likes.component';
     UserCardComponent,
     NavbarComponent,
     UserInitialsPipe,
+    DarkModeToggleComponent,
     LikesComponent,
   ],
   imports: [

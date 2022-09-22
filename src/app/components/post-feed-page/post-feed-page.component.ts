@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 import { FormControl, FormGroup } from '@angular/forms';
 import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -21,16 +22,22 @@ export class PostFeedPageComponent implements OnInit {
   createPost:boolean = false;
 
 
-  constructor(private postService: PostService, private authService: AuthService) { }
-
+  constructor(private postService: PostService, private authService: AuthService, private dMode : DarkModeService) { }
+  matColorPostFeed: boolean
+  
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe(
       (response) => {
         this.posts = response
-        console.log(response)
- 
-      })
-    
+      }
+    )
+
+    this.dMode.theme.subscribe(
+      value => {
+        this.matColorPostFeed = value
+      }
+    )
+
   }
 
   toggleCreatePost = () => {

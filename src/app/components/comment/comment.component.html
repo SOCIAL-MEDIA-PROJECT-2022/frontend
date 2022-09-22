@@ -1,18 +1,19 @@
 <p>
     {{inputComment.text}}
 </p>
-<div class="comment-reply" align="right">
+<!-- replying to a post-->
+<div  [class.darkColorMode] = "matColorPostComment" class="comment-reply" align="end" >
     <div class="comment-reply-text" (click)="toggleReplyToComment()">
         reply
     </div>
-    <form class="form" *ngIf="replyToComment" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
+    <form  class="form" *ngIf="replyToComment" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Make a Post</mat-label>
             <textarea matInput autofocus formControlName="text"></textarea>
         </mat-form-field>
         <div align="end">
-            <button mat-raised-button color="warn" (click)="toggleReplyToComment()">Cancel</button>
-            <button mat-raised-button color="primary" type="submit">Post</button>
+            <button mat-raised-button color="" (click)="toggleReplyToComment()">Cancel</button>
+            <button mat-raised-button color="warn" type="submit">Post</button>
         </div>
     </form>
 </div>
