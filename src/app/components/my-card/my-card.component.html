@@ -1,32 +1,38 @@
 <mat-dialog-content>
   <div class="my-card-container">
     <mat-grid-list cols="8" rowHeight="100px">
-
-      <mat-grid-tile [colspan]="3"
-                     [rowspan]="4" id="my-card-pic">
-        <div>
-          <img [src]=profile.profilePic alt="Photo of a Shiba Inu" mat-card-image>
-          <p>Member Since Jan, 2017</p>
-        </div>
-      </mat-grid-tile>
-
-      <mat-grid-tile [colspan]="4"
-                     [rowspan]="3" id="my-card-header-and-handle">
+      <header>
+        <h2 *ngIf="showInfo">{{user.firstName}} {{user.lastName}}'s Profile</h2>
         <app-profile (test)="test()" *ngIf="showEdit" [profile]="profile"></app-profile>
-        <div class="profile1">
-          <h2 *ngIf="showInfo">{{user.firstName}} {{user.lastName}}'s Profile</h2>
-          <h3 *ngIf="showInfo">{{profile.aboutMe}}</h3>
-          <h3 *ngIf="showInfo">{{profile.hobbies}}</h3>
-          <h3 *ngIf="showInfo">{{profile.somethingElse}}</h3>
+      </header>
+      <mat-grid-tile [colspan]="3" [rowspan]="4" id="my-card-pic">
+        <div>
+          <img [src]=profile.profilePic alt="Profile Picture" mat-card-image>
         </div>
       </mat-grid-tile>
-
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>About Me</mat-grid-tile-header>
+        <p *ngIf="showInfo">{{profile.aboutMe}}</p>
+      </mat-grid-tile>
       <mat-grid-tile [colspan]="1"
                      [rowspan]="1" id="my-card-avatar">
         <img (click)="showEditProfile()"
              alt="Image of Avatar"
-             mat-button
              mat-card-image src="../../../assets/images/edit.png">
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>Hobbies</mat-grid-tile-header>
+        <p *ngIf="showInfo">{{profile.hobbies}}</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>Something Interesting</mat-grid-tile-header>
+          <p *ngIf="showInfo">{{profile.somethingElse}}</p>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>Placeholder</mat-grid-tile-header>
+        <p *ngIf="showInfo">Placeholder</p>
       </mat-grid-tile>
     </mat-grid-list>
   </div>

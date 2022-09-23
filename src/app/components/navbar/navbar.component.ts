@@ -39,14 +39,10 @@ profile0: Profile = {} as Profile;
     this.router.navigate(['post-feed'])
   }
 
-  otherCards() {
-    this.router.navigate(['found-users'])
-  }
-
   openMyCard() {
     const dialogCfg = new MatDialogConfig();
     dialogCfg.autoFocus = true;
-
+    dialogCfg.height="50%"
 
     this.dialog.open(MyCardComponent, dialogCfg);
   }
