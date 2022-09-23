@@ -1,11 +1,11 @@
 
 .navbar-btn {
-    cursor: pointer;
-    transition: all .1s linear;
+  cursor: pointer;
+  transition: all .1s linear;
 }
 
 .navbar-btn:hover {
-    color: black;
+  color: black;
 }
 
 /*

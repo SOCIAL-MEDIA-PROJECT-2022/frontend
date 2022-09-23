@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { SearchBarService } from 'src/app/services/search-bar.service';
-import User from 'src/app/models/User'
-import { SearchService } from 'src/app/services/search.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+import {SearchBarService} from 'src/app/services/search-bar.service';
+import {SearchService} from 'src/app/services/search.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,7 +16,8 @@ export class SearchBarComponent implements OnInit {
   })
 
 
-  constructor(private searchBarService: SearchBarService, private searchService: SearchService, private router: Router) { }
+  constructor(private searchBarService: SearchBarService, private searchService: SearchService, private router: Router) {
+  }
 
   ngOnInit(): void {
   }

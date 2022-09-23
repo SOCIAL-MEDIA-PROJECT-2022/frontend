@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { AuthService } from 'src/app/services/auth.service';
-import { MyCardComponent } from '../my-card/my-card.component';
-import { PostFeedPageComponent } from '../post-feed-page/post-feed-page.component';
+import {Component, OnInit} from '@angular/core';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {Router} from '@angular/router';
+import {AuthService} from 'src/app/services/auth.service';
+import {MyCardComponent} from '../my-card/my-card.component';
 
 @Component({
   selector: 'app-navbar',
@@ -12,12 +10,13 @@ import { PostFeedPageComponent } from '../post-feed-page/post-feed-page.componen
   styleUrls: ['./navbar.component.css']
 })
 
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
   }
@@ -25,7 +24,7 @@ export class NavbarComponent implements OnInit{
   ngOnDestroy() {
   }
 
-  home(){
+  home() {
     this.router.navigate(['post-feed'])
   }
 
@@ -41,7 +40,7 @@ export class NavbarComponent implements OnInit{
     this.dialog.open(MyCardComponent, dialogCfg);
   }
 
-  profile(){
+  profile() {
     this.router.navigate(['profile']);
   }
 

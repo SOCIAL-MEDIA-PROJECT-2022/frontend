@@ -11,12 +11,14 @@ import {ProfileService} from "../../services/profile.service";
 })
 export class SearchCardComponent implements OnInit {
 
-  profile:Profile = {} as Profile;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: User, private profileService: ProfileService) { }
+  profile: Profile = {} as Profile;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data: User, private profileService: ProfileService) {
+  }
 
   ngOnInit(): void {
     this.profileService.getProfile(this.data.id).subscribe(
-      (response) =>{
+      (response) => {
         this.profile = response
       }
     )

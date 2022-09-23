@@ -51,12 +51,13 @@ import {SearchCardComponent} from './components/search-card/search-card.componen
     AngularMaterialModule,
     MatDialogModule,
     RouterModule.forRoot([
-      { path: '', component: PostFeedPageComponent }, //empty string on path indicates root area or home page which I am assumiong is the FeedPageComponent.
-      { path: 'post', component: PostComponent },
-      { path: '**', component: NotFoundComponent }
+      {path: '', component: PostFeedPageComponent}, //empty string on path indicates root area or home page which I am assumiong is the FeedPageComponent.
+      {path: 'post', component: PostComponent},
+      {path: '**', component: NotFoundComponent}
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

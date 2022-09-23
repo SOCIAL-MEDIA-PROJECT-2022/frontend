@@ -2,95 +2,95 @@
   <div class="title">
     <h2>Edit {{ user.firstName }}'s Profile</h2>
   </div>
-  <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit($event)" ng-show="showForm" required>
-  <div class="user-details">
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input
-        id="firstName"
-        type="text"
-        class="form-control"
-        formControlName="firstName"
-        [(ngModel)]="user.firstName"
-      />
-    </div>
-    <div class="form-group">
-      <label for="lastName">Last Name</label>
-      <input
-        id="lastName"
-        type="text"
-        class="form-control"
-        formControlName="lastName"
-        [(ngModel)]="user.lastName"
-      />
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input
-        id="email"
-        type="email"
-        class="form-control"
-        formControlName="email"
-        [(ngModel)]="user.email"
-      />
-    </div>
-    <div class="form-group">
-      <label for="aboutMe">About Me</label>
-      <input
-        id="aboutMe"
-        type="aboutMe"
-        class="form-control"
-        formControlName="aboutMe"
-        [(ngModel)]="profile.aboutMe"
-      />
-    </div>
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="profileForm" class="form" ng-show="showForm" required>
+    <div class="user-details">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input
+          [(ngModel)]="user.firstName"
+          class="form-control"
+          formControlName="firstName"
+          id="firstName"
+          type="text"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input
+          [(ngModel)]="user.lastName"
+          class="form-control"
+          formControlName="lastName"
+          id="lastName"
+          type="text"
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="user.email"
+          class="form-control"
+          formControlName="email"
+          id="email"
+          type="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="aboutMe">About Me</label>
+        <input
+          [(ngModel)]="profile.aboutMe"
+          class="form-control"
+          formControlName="aboutMe"
+          id="aboutMe"
+          type="aboutMe"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="hobbies">Hobbies</label>
-      <input
-        id="hobbies"
-        type="hobbies"
-        class="form-control"
-        formControlName="hobbies"
-        [(ngModel)]="profile.hobbies"
-      />
-    </div>
+      <div class="form-group">
+        <label for="hobbies">Hobbies</label>
+        <input
+          [(ngModel)]="profile.hobbies"
+          class="form-control"
+          formControlName="hobbies"
+          id="hobbies"
+          type="hobbies"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="somethingElse">Something Interesting</label>
-      <input
-        id="somethingElse"
-        type="somethingElse"
-        class="form-control"
-        formControlName="somethingElse"
-        [(ngModel)]="profile.somethingElse"
-      />
-    </div>
+      <div class="form-group">
+        <label for="somethingElse">Something Interesting</label>
+        <input
+          [(ngModel)]="profile.somethingElse"
+          class="form-control"
+          formControlName="somethingElse"
+          id="somethingElse"
+          type="somethingElse"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="profilePic">Picture URL</label>
-      <input
-        id="profilePic"
-        type="profilePic"
-        class="form-control"
-        formControlName="profilePic"
-        [(ngModel)]="profile.profilePic"
-      />
-    </div>
+      <div class="form-group">
+        <label for="profilePic">Picture URL</label>
+        <input
+          [(ngModel)]="profile.profilePic"
+          class="form-control"
+          formControlName="profilePic"
+          id="profilePic"
+          type="profilePic"
+        />
+      </div>
 
-  </div>
-  <div>
-    <span class="error" *ngIf="profileForm.invalid">
+    </div>
+    <div>
+    <span *ngIf="profileForm.invalid" class="error">
       {{ error_message }} <br
     /></span>
-  </div>
-  <button
-    id = "form-button"
-    *ngIf="user.firstName && user.lastName && user.email"
-    class="btn btn-primary"
-    type="submit">Submit
-  </button>
-</form>
+    </div>
+    <button
+      *ngIf="user.firstName && user.lastName && user.email"
+      class="btn btn-primary"
+      id="form-button"
+      type="submit">Submit
+    </button>
+  </form>
 </div>
 
 

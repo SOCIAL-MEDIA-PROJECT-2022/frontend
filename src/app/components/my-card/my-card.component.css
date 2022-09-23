@@ -1,6 +1,6 @@
 
 .my-card-container {
-    width: 900px;
+  width: 900px;
 }
 
 /* .my-card-pic {
@@ -17,45 +17,45 @@
     justify-content: center;
     row-gap: 8px;
     column-gap: 8px;
-    height: 100%; 
+    height: 100%;
 } */
 
 mat-grid-tile {
-    /*border: 1px solid;*/
+  /*border: 1px solid;*/
 }
 
 #about-me div {
-    font-size: 1.3em;
-    padding: 25px;
+  font-size: 1.3em;
+  padding: 25px;
 }
 
 #my-card-pic div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #my-card-header-and-handle div {
-    font-size: 1.5em;
-    display: flex;
-    flex-direction: column;
-    /*margin-right: 175px;
-     align-items: left;     */
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  /*margin-right: 175px;
+   align-items: left;     */
 }
 
 #my-card-avatar img {
-    margin-left: 60px;
-    padding: 0px;
-    height: 40px;
-    width: 40px;
+  margin-left: 60px;
+  padding: 0px;
+  height: 40px;
+  width: 40px;
 }
 
 #my-card-avatar:hover {
-    cursor: pointer; 
+  cursor: pointer;
 }
 
-.profile1{
-    margin-left: 60px;
-    height: 100px;
+.profile1 {
+  margin-left: 60px;
+  height: 100px;
 }
 

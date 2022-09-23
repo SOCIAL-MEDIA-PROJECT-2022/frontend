@@ -3,14 +3,14 @@
     <mat-card-title>Search</mat-card-title>
   </mat-card-header>
 
-  <form class="form" [formGroup]="searchForm" (ngSubmit)="onSubmit($event)">
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="searchForm" class="form">
     <mat-card-content>
       <mat-form-field class="full-width">
-        <input matInput placeholder="" formControlName="email">
+        <input formControlName="email" matInput placeholder="">
 
-        <button mat-stroked-button color="accent" class="btn-block" type="submit"><img
-            src="https://www.nicepng.com/png/detail/137-1378213_select-public-search-button-z-svg-png-icon.png"
-            height="25" width="25"></button>
+        <button class="btn-block" color="accent" mat-stroked-button type="submit"><img
+          height="25"
+          src="https://www.nicepng.com/png/detail/137-1378213_select-public-search-button-z-svg-png-icon.png" width="25"></button>
 
       </mat-form-field>
     </mat-card-content>
