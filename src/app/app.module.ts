@@ -13,7 +13,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {PostFeedPageComponent} from './components/post-feed-page/post-feed-page.component';
 import {PostComponent} from './components/post/post.component';
 import {CommentComponent} from './components/comment/comment.component';
-import {UserCardComponent} from './components/user-card/user-card.component';
 import {UserInitialsPipe} from './pipes/user-initials.pipe';
 import {NavbarComponent} from './components/navbar/navbar.component';
 
@@ -21,11 +20,8 @@ import {ProfileComponent} from './components/profile/profile.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {MyCardComponent} from './components/my-card/my-card.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {SearchResultsComponent} from './components/search-results/search-results.component';
-import {FoundUsersComponent} from './components/found-users/found-users.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {SearchFeedPageComponent} from './components/search-feed-page/search-feed-page.component';
-import {UserSearchResultsComponent} from './components/user-search-results/user-search-results.component';
 import {SearchCardComponent} from './components/search-card/search-card.component';
 
 @NgModule({
@@ -36,17 +32,13 @@ import {SearchCardComponent} from './components/search-card/search-card.componen
     PostFeedPageComponent,
     PostComponent,
     CommentComponent,
-    UserCardComponent,
     NavbarComponent,
     UserInitialsPipe,
     ProfileComponent,
     NotFoundComponent,
     MyCardComponent,
-    SearchResultsComponent,
-    FoundUsersComponent,
     SearchBarComponent,
     SearchFeedPageComponent,
-    UserSearchResultsComponent,
     SearchCardComponent,
   ],
   imports: [
@@ -60,7 +52,6 @@ import {SearchCardComponent} from './components/search-card/search-card.componen
     MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: PostFeedPageComponent }, //empty string on path indicates root area or home page which I am assumiong is the FeedPageComponent.
-      { path: 'found-users', component: FoundUsersComponent },
       { path: 'post', component: PostComponent },
       { path: '**', component: NotFoundComponent }
     ])
