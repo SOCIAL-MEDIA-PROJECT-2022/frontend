@@ -12,7 +12,7 @@
 
     <mat-grid-tile  id="my-card-header-and-handle"
       [colspan]="4" [rowspan]="3">
-          <app-profile *ngIf="showEdit" (test)="test()"></app-profile>
+          <app-profile *ngIf="showEdit" (test)="test()" [profile]="profile" ></app-profile>
         <div class="profile1">
           <h2 *ngIf="showInfo">{{user.firstName}} {{user.lastName}}'s Profile</h2>
           <h3 *ngIf="showInfo">{{profile.aboutMe}}</h3>

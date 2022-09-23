@@ -1,11 +1,8 @@
-import { Component, OnInit, OnChanges, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit, OnChanges, EventEmitter, Output, Input} from '@angular/core';
 import User from 'src/app/models/User';
-import Post from 'src/app/models/Post';
 import { AuthService } from 'src/app/services/auth.service';
 import {
   FormControl,
-  FormControlName,
   FormGroup,
   Validators,
 } from '@angular/forms';
@@ -21,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
 
 export class ProfileComponent implements OnInit {
   user: User = {} as User;
-  profile: Profile = {} as Profile;
+  @Input() profile: Profile = {} as Profile;
   editSuccess:boolean = false;
 
   constructor(
@@ -31,16 +28,18 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
+    console.log(this.profile);
   }
 
   profileForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
-    email: new FormControl('', [
-      Validators.required,
-      Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl(''),
-    aboutMe: new FormControl('', Validators.required)
+    aboutMe: new FormControl('', Validators.required),
+    hobbies: new FormControl('',Validators.required),
+    somethingElse: new FormControl('', Validators.required),
+    profilePic: new FormControl('', Validators.required)
   });
 
   error_message: string;
@@ -48,7 +47,7 @@ export class ProfileComponent implements OnInit {
   onSubmit(e: any): void {
     e.preventDefault();
     console.log(this.user);
-    
+
     this.profileService.update(this.user).subscribe((response) => {
       if(response.status == 200) {
         this.error_message = 'Succcess!';
@@ -56,7 +55,7 @@ export class ProfileComponent implements OnInit {
     });
     this.editSuccess=true;
     this.onClick();
-    
+
   }
 
   @Output("test") test: EventEmitter<any> = new EventEmitter();

@@ -34,15 +34,50 @@
         [(ngModel)]="user.email"
       />
     </div>
-    <!--<div class="form-group">
-      <label for="password">Password</label>
+    <div class="form-group">
+      <label for="aboutMe">About Me</label>
       <input
-        id="password"
-        type="password"
+        id="aboutMe"
+        type="aboutMe"
         class="form-control"
-        formControlName="password"
+        formControlName="aboutMe"
+        [(ngModel)]="profile.aboutMe"
       />
-    </div>-->
+    </div>
+
+    <div class="form-group">
+      <label for="hobbies">Hobbies</label>
+      <input
+        id="hobbies"
+        type="hobbies"
+        class="form-control"
+        formControlName="hobbies"
+        [(ngModel)]="profile.hobbies"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="somethingElse">Something Interesting</label>
+      <input
+        id="somethingElse"
+        type="somethingElse"
+        class="form-control"
+        formControlName="somethingElse"
+        [(ngModel)]="profile.somethingElse"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="profilePic">Picture URL</label>
+      <input
+        id="profilePic"
+        type="profilePic"
+        class="form-control"
+        formControlName="profilePic"
+        [(ngModel)]="profile.profilePic"
+      />
+    </div>
+
   </div>
   <div>
     <span class="error" *ngIf="profileForm.invalid">
