@@ -50,7 +50,6 @@ export class MyCardComponent implements OnInit {
   showEditProfile() {
     this.showEdit = !this.showEdit;
     this.showInfo = !this.showInfo;
-    this.user.firstName = this.user.firstName;
     console.log("clicked")
   }
 

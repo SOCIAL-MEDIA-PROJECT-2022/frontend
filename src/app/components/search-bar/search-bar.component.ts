@@ -33,9 +33,4 @@ export class SearchBarComponent implements OnInit {
           this.router.navigate(['search-feed-page'])
         })
   }
-
-  searchFeed() {
-    this.router.navigate(['search-feed-page'])
-  }
-
 }
