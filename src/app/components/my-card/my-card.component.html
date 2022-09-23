@@ -1,16 +1,17 @@
 <mat-dialog-content>
   <div class="my-card-container">
     <mat-grid-list cols="8" rowHeight="100px">
-      <header>
+      <header id="name">
         <h2 *ngIf="showInfo">{{user.firstName}} {{user.lastName}}'s Profile</h2>
-        <app-profile (test)="test()" *ngIf="showEdit" [profile]="profile"></app-profile>
+<!--        <app-profile (test)="test()" *ngIf="showEdit" [profile]="profile"></app-profile>-->
       </header>
       <mat-grid-tile [colspan]="3" [rowspan]="4" id="my-card-pic">
         <div>
           <img [src]=profile.profilePic alt="Profile Picture" mat-card-image>
+          <mat-card-footer *ngIf="showEdit">IMG URL: {{profile.profilePic}}</mat-card-footer>
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="4" [rowspan]="2">
+      </mat-grid-tile >
+      <mat-grid-tile [colspan]="4" [rowspan]="2" id="about-me">
         <mat-grid-tile-header>About Me</mat-grid-tile-header>
         <p *ngIf="showInfo">{{profile.aboutMe}}</p>
       </mat-grid-tile>
@@ -21,20 +22,22 @@
              mat-card-image src="../../../assets/images/edit.png">
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="4" [rowspan]="2">
+      <mat-grid-tile [colspan]="4" [rowspan]="2" id="hobbies">
         <mat-grid-tile-header>Hobbies</mat-grid-tile-header>
         <p *ngIf="showInfo">{{profile.hobbies}}</p>
       </mat-grid-tile>
 
-      <mat-grid-tile [colspan]="4" [rowspan]="2">
+      <mat-grid-tile [colspan]="4" [rowspan]="2" id="interesting-fact">
         <mat-grid-tile-header>Something Interesting</mat-grid-tile-header>
-          <p *ngIf="showInfo">{{profile.somethingElse}}</p>
+        <p *ngIf="showInfo">{{profile.somethingElse}}</p>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="4" [rowspan]="2">
+      <mat-grid-tile [colspan]="4" [rowspan]="2" id="placeholder">
         <mat-grid-tile-header>Placeholder</mat-grid-tile-header>
         <p *ngIf="showInfo">Placeholder</p>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="showEdit" [colspan]="8" [rowspan]="1" id="submit">
+        <button>Submit</button>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
 </mat-dialog-content>
-

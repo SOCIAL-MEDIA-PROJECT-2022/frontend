@@ -8,10 +8,6 @@
   padding: 0;
 }
 
-#about-me div {
-  font-size: 1.3em;
-  padding: 25px;
-}
 #my-card-container{
   display: flex;
 }

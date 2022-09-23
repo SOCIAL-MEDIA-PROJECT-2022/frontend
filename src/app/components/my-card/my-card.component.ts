@@ -14,9 +14,9 @@ import {FormControl, FormGroup, Validators,} from '@angular/forms';
 export class MyCardComponent implements OnInit {
   user: User = {} as User;
   profile: Profile = {} as Profile;
-  showEdit: Boolean = false;
-  showInfo: Boolean = true;
-  isSubmitted: Boolean = false;
+  showEdit: boolean = false;
+  showInfo: boolean = true;
+  isSubmitted: boolean = false;
 
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.email, Validators.required]),
@@ -48,15 +48,47 @@ export class MyCardComponent implements OnInit {
 
   showEditProfile() {
     this.showEdit = !this.showEdit;
-    this.showInfo = !this.showInfo;
-    console.log("clicked")
+    let name = document.getElementById("name");
+    let profilePic =   document.getElementById("my-card-pic");
+    let aboutMe =   document.getElementById("about-me");
+    let hobbies = document.getElementById("hobbies");
+    let interesting = document.getElementById("interesting-fact");
+    let placeholder = document.getElementById("placeholder");
+    if(this.showEdit){
+      // @ts-ignore
+      name.setAttribute('contenteditable','true');
+      // @ts-ignore
+      profilePic.setAttribute('contenteditable','true');
+      // @ts-ignore
+      aboutMe.setAttribute('contenteditable','true');
+      // @ts-ignore
+      hobbies.setAttribute('contenteditable','true');
+      // @ts-ignore
+      interesting.setAttribute('contenteditable','true');
+      // @ts-ignore
+      placeholder.setAttribute('contenteditable','true');
+    }else{
+      //@ts-ignore
+      name.setAttribute('contenteditable','false');
+      // @ts-ignore
+      profilePic.setAttribute('contenteditable','false');
+      // @ts-ignore
+      aboutMe.setAttribute('contenteditable','false');
+      // @ts-ignore
+      hobbies.setAttribute('contenteditable','false');
+      // @ts-ignore
+      interesting.setAttribute('contenteditable','false');
+      // @ts-ignore
+      placeholder.setAttribute('contenteditable','false');
+    }
+
+    console.log("clicked");
   }
 
   test() {
     console.log("test2");
     this.showEditProfile();
   }
-
 
 }
 
