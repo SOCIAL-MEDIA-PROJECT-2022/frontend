@@ -43,7 +43,7 @@ export class MyCardComponent implements OnInit {
 
   onSubmit(e: any): void {
     e.preventDefault();
-    this.profileService.update(this.user).subscribe();
+    this.profileService.update(this.profile).subscribe();
   }
 
   showEditProfile() {

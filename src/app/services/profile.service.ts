@@ -16,9 +16,9 @@ export class ProfileService {
   constructor(private http: HttpClient) {
   }
 
-  update(user: User): Observable<any> {
-    console.log(user);
-    const res = this.http.put<any>(`${this.userUrl}/update`, user, {
+  update(profile: Profile): Observable<any> {
+    console.log(profile);
+    const res = this.http.patch<any>(`${this.profileUrl}/update`, profile, {
       headers: environment.headers, withCredentials: environment.withCredentials,
       observe: 'response'
     });

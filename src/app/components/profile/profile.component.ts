@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
     e.preventDefault();
     console.log(this.user);
 
-    this.profileService.update(this.user).subscribe((response) => {
+    this.profileService.update(this.profile).subscribe((response) => {
       if (response.status == 200) {
         this.error_message = 'Succcess!';
       }
