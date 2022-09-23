@@ -35,7 +35,7 @@
         <mat-grid-tile-header>Placeholder</mat-grid-tile-header>
         <p *ngIf="showInfo">Placeholder</p>
       </mat-grid-tile>
-      <mat-grid-tile *ngIf="showEdit" [colspan]="8" [rowspan]="1" id="submit">
+      <mat-grid-tile *ngIf="showEdit" [colspan]="8" [rowspan]="1" id="submit" (click) = onSubmit($event)>
         <button>Submit</button>
       </mat-grid-tile>
     </mat-grid-list>
