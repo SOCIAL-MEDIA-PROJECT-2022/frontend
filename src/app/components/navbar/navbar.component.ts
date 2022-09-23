@@ -15,10 +15,10 @@ import { PostFeedPageComponent } from '../post-feed-page/post-feed-page.componen
 export class NavbarComponent implements OnInit{
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private router: Router,
     public dialog: MatDialog) { }
-  
+
   ngOnInit(): void {
   }
 
@@ -35,8 +35,8 @@ export class NavbarComponent implements OnInit{
 
   openMyCard() {
     const dialogCfg = new MatDialogConfig();
-    // dialogCfg.disableClose= true;
     dialogCfg.autoFocus = true;
+
 
     this.dialog.open(MyCardComponent, dialogCfg);
   }

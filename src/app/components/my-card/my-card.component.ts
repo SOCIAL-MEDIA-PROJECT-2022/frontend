@@ -26,9 +26,9 @@ export class MyCardComponent implements OnInit {
   isSubmitted: Boolean = false;
 
   profileForm = new FormGroup({
-       firstName: new FormControl('', [Validators.email, Validators.required]),
-       lastName: new FormControl('', [Validators.email, Validators.required]),
-       email: new FormControl('', [
+    firstName: new FormControl('', [Validators.email, Validators.required]),
+    lastName: new FormControl('', [Validators.email, Validators.required]),
+    email: new FormControl('', [
         Validators.required,
         Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
     //     password: new FormControl(''),
@@ -44,34 +44,17 @@ export class MyCardComponent implements OnInit {
     this.profileService.getProfile(this.authService.currentUser.id).subscribe(
       (response) => {
         this.profile = response
-        //console.log(this.profile);
-        //return this.profile;
       }
     )
-    console.log(this.profile);
-    //call in inIt
-    
-  }
-
-  getUserProfile(){
-    this.profileService.getProfile(this.user.id).subscribe(
-      (response) => {
-        this.profile = response
-        console.log(this.profile);
-        return this.profile;
-      }
-    )
-
   }
 
   onSubmit(e: any): void {
-         e.preventDefault();
-         //console.log("hello");
+        e.preventDefault();
         this.profileService.update(this.user).subscribe();
-       }
+  }
 
   showEditProfile(){
-    this.showEdit = !this.showEdit; 
+    this.showEdit = !this.showEdit;
     this.showInfo = !this.showInfo;
     this.user.firstName = this.user.firstName;
     console.log("clicked")

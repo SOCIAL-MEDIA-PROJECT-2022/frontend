@@ -1,12 +1,9 @@
-import User from './User';
-
 export default class Profile {
   id: number;
   aboutMe: string;
   hobbies: string;
   somethingElse: string;
   profilePic: string;
-  user: User;
 
   constructor(
     id: number,
@@ -14,13 +11,11 @@ export default class Profile {
     hobbies: string,
     somethingElse: string,
     profilePic: string,
-    user: User
   ) {
     this.id = id;
     this.aboutMe = aboutMe;
     this.hobbies = hobbies;
     this.somethingElse = somethingElse;
     this.profilePic = profilePic;
-    this.user = user;
   }
 }

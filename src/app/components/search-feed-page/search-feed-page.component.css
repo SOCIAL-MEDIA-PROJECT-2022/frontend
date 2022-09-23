@@ -28,3 +28,7 @@ div {
 img {
     padding: 10px;
 }
+
+.usercard{
+  cursor: pointer;
+}
