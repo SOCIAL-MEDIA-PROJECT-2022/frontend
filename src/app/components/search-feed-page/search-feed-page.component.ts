@@ -20,7 +20,7 @@ export class SearchFeedPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.searchService.searchUsers.subscribe((value) => {
+    this.searchService.searchedUsers.subscribe((value) => {
       this.users = value;
     });
   }
@@ -28,7 +28,7 @@ export class SearchFeedPageComponent implements OnInit {
   openUserModel(user: User) {
     const dialogCfg = new MatDialogConfig();
     dialogCfg.autoFocus = true;
-    dialogCfg.width = '900px'
+    dialogCfg.width = '75%'
     dialogCfg.data = user;
     this.dialog.open(SearchCardComponent, dialogCfg);
   }

@@ -2,18 +2,31 @@
   <div class="my-card-container">
     <mat-grid-list cols="8" rowHeight="100px">
       <header id="name">
-        <h2 *ngIf="showInfo">{{user.firstName}} {{user.lastName}}'s Profile</h2>
-<!--        <app-profile (test)="test()" *ngIf="showEdit" [profile]="profile"></app-profile>-->
+        <h2 *ngIf="showInfo" [contentEditable]="edit">{{user.firstName}} {{user.lastName}}'s Profile</h2>
+        <div *ngIf="edit">
+          <h3>First Name: </h3>
+          <p [contentEditable]="edit">{{user.firstName}}</p>
+          <h3>Last Name:</h3>
+          <p [contentEditable]="edit">{{user.lastName}}</p>
+        </div>
       </header>
       <mat-grid-tile [colspan]="3" [rowspan]="4" id="my-card-pic">
         <div>
           <img [src]=profile.profilePic alt="Profile Picture" mat-card-image>
-          <mat-card-footer *ngIf="showEdit">IMG URL: {{profile.profilePic}}</mat-card-footer>
-        </div>
+          <div>
+            <h3 *ngIf="edit">IMG URL:</h3>
+            <mat-card-footer *ngIf="edit"><input [(ngModel)]="profile.profilePic"></mat-card-footer>
+          </div>
+          </div>
       </mat-grid-tile >
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="about-me">
         <mat-grid-tile-header>About Me</mat-grid-tile-header>
         <p *ngIf="showInfo">{{profile.aboutMe}}</p>
+        <div>
+        <mat-card-footer *ngIf="edit">
+        <input [(ngModel)]="profile.aboutMe"/>
+        </mat-card-footer>
+        </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1"
                      [rowspan]="1" id="my-card-avatar">
@@ -25,18 +38,21 @@
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="hobbies">
         <mat-grid-tile-header>Hobbies</mat-grid-tile-header>
         <p *ngIf="showInfo">{{profile.hobbies}}</p>
+        <div>
+        <p *ngIf="edit"><input [(ngModel)]="profile.hobbies"/></p>
+        </div>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="interesting-fact">
         <mat-grid-tile-header>Something Interesting</mat-grid-tile-header>
-        <p *ngIf="showInfo">{{profile.somethingElse}}</p>
+        <p *ngIf="showInfo" >{{profile.somethingElse}}</p>
+        <p *ngIf="edit"><input [(ngModel)]="profile.somethingElse"/></p>
+
       </mat-grid-tile>
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="placeholder">
         <mat-grid-tile-header>Placeholder</mat-grid-tile-header>
-        <p *ngIf="showInfo">Placeholder</p>
-      </mat-grid-tile>
-      <mat-grid-tile *ngIf="showEdit" [colspan]="8" [rowspan]="1" id="submit" (click) = onSubmit($event)>
-        <button>Submit</button>
+        <p *ngIf="showInfo" [contentEditable]="edit">{{placeholder}}</p>
+        <p *ngIf="edit"><input [(ngModel)]="placeholder"/></p>
       </mat-grid-tile>
     </mat-grid-list>
   </div>

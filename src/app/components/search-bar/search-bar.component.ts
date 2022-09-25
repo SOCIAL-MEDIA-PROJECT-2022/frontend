@@ -29,7 +29,7 @@ export class SearchBarComponent implements OnInit {
     this.searchBarService.search(this.searchForm.value.email || "")
       .subscribe(
         (response) => {
-          this.searchService.searchUsers.next(response);
+          this.searchService.searchedUsers.next(response);
           this.router.navigate(['search-feed-page'])
         })
   }

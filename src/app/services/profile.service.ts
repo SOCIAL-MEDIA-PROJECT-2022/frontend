@@ -10,7 +10,7 @@ import Profile from '../models/Profile';
 })
 export class ProfileService {
 
-  userUrl: string = `${environment.baseUrl}/user`;
+  profile:Profile;
   profileUrl: string = `${environment.baseUrl}/profile`;
 
   constructor(private http: HttpClient) {
@@ -30,9 +30,13 @@ export class ProfileService {
 
   getProfile(id: number): Observable<Profile> {
     let requestUrl: string = this.profileUrl + "/" + id
-    return this.http.get<Profile>(requestUrl, {
+    let res = this.http.get<Profile>(requestUrl, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     })
+    res.subscribe( (data) => {
+      this.profile = data;
+    })
+    return res;
   }
 }

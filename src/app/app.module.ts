@@ -16,13 +16,13 @@ import {CommentComponent} from './components/comment/comment.component';
 import {UserInitialsPipe} from './pipes/user-initials.pipe';
 import {NavbarComponent} from './components/navbar/navbar.component';
 
-import {ProfileComponent} from './components/profile/profile.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import {MyCardComponent} from './components/my-card/my-card.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {SearchFeedPageComponent} from './components/search-feed-page/search-feed-page.component';
 import {SearchCardComponent} from './components/search-card/search-card.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +34,12 @@ import {SearchCardComponent} from './components/search-card/search-card.componen
     CommentComponent,
     NavbarComponent,
     UserInitialsPipe,
-    ProfileComponent,
     NotFoundComponent,
     MyCardComponent,
     SearchBarComponent,
     SearchFeedPageComponent,
     SearchCardComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

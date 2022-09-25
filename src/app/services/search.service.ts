@@ -6,6 +6,6 @@ import User from '../models/User';
   providedIn: 'root'
 })
 export class SearchService {
-  public searchUsers: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
+  public searchedUsers: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
 
 }

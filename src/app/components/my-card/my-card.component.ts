@@ -14,9 +14,10 @@ import {FormControl, FormGroup, Validators,} from '@angular/forms';
 export class MyCardComponent implements OnInit {
   user: User = {} as User;
   profile: Profile = {} as Profile;
-  showEdit: boolean = false;
+  edit: boolean = false;
   showInfo: boolean = true;
   isSubmitted: boolean = false;
+  placeholder:String = "Placeholder"
 
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.email, Validators.required]),
@@ -34,61 +35,16 @@ export class MyCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
-    this.profileService.getProfile(this.authService.currentUser.id).subscribe(
-      (response) => {
-        this.profile = response
-      }
-    )
-  }
-
-  onSubmit(e: any): void {
-    e.preventDefault();
-    this.profileService.update(this.profile).subscribe();
+    this.profile =this.profileService.profile;
   }
 
   showEditProfile() {
-    this.showEdit = !this.showEdit;
-    let name = document.getElementById("name");
-    let profilePic =   document.getElementById("my-card-pic");
-    let aboutMe =   document.getElementById("about-me");
-    let hobbies = document.getElementById("hobbies");
-    let interesting = document.getElementById("interesting-fact");
-    let placeholder = document.getElementById("placeholder");
-    if(this.showEdit){
-      // @ts-ignore
-      name.setAttribute('contenteditable','true');
-      // @ts-ignore
-      profilePic.setAttribute('contenteditable','true');
-      // @ts-ignore
-      aboutMe.setAttribute('contenteditable','true');
-      // @ts-ignore
-      hobbies.setAttribute('contenteditable','true');
-      // @ts-ignore
-      interesting.setAttribute('contenteditable','true');
-      // @ts-ignore
-      placeholder.setAttribute('contenteditable','true');
-    }else{
-      //@ts-ignore
-      name.setAttribute('contenteditable','false');
-      // @ts-ignore
-      profilePic.setAttribute('contenteditable','false');
-      // @ts-ignore
-      aboutMe.setAttribute('contenteditable','false');
-      // @ts-ignore
-      hobbies.setAttribute('contenteditable','false');
-      // @ts-ignore
-      interesting.setAttribute('contenteditable','false');
-      // @ts-ignore
-      placeholder.setAttribute('contenteditable','false');
+    if(this.edit) {
+      console.log(this.profile);
+      console.log("we will call update here");
+      // this.profileService.update(this.profile);
     }
-
-    console.log("clicked");
+    this.edit = !this.edit;
   }
-
-  test() {
-    console.log("test2");
-    this.showEditProfile();
-  }
-
 }
 

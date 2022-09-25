@@ -14,7 +14,7 @@ import {MyCardComponent} from '../my-card/my-card.component';
 })
 
 export class NavbarComponent implements OnInit { user: User = {} as User;
-profile0: Profile = {} as Profile;
+profile: Profile = {} as Profile;
 
   constructor(
     private authService: AuthService,
@@ -26,30 +26,21 @@ profile0: Profile = {} as Profile;
   ngOnInit(): void { this.user = this.authService.currentUser;
     this.profileService.getProfile(this.authService.currentUser.id).subscribe(
       (response) => {
-        this.profile0 = response
+        this.profile = response
       }
     )
-    
-  }
 
-  ngOnDestroy() {
   }
-
   home() {
     this.router.navigate(['post-feed'])
   }
 
-  openMyCard() {
+  openProfile() {
     const dialogCfg = new MatDialogConfig();
     dialogCfg.autoFocus = true;
     dialogCfg.height="50%"
-
-    this.dialog.open(MyCardComponent, dialogCfg);
-  }
-
-  profile() {
-    this.router.navigate(['profile']);
-  }
+    dialogCfg.width="70%"
+    this.dialog.open(MyCardComponent, dialogCfg);  }
 
   logout() {
     this.authService.logout();
