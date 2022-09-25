@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { AuthService } from './auth.service';
-import { environment } from 'src/environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {environment} from 'src/environments/environment';
 import User from '../models/User';
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import Profile from '../models/Profile';
 
 @Injectable({
@@ -11,32 +10,33 @@ import Profile from '../models/Profile';
 })
 export class ProfileService {
 
-  userUrl: string = `${environment.baseUrl}/user`;
+  profile:Profile;
   profileUrl: string = `${environment.baseUrl}/profile`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-  update(user: User): Observable<any> {
-    console.log(user);
-    const res = this.http.put<any>(`${this.userUrl}/update`, user, {
+  update(profile: Profile): Observable<Profile> {
+    console.log("Calling Update with: ");
+    console.log(profile);
+    const res = this.http.patch<Profile>(`${this.profileUrl}/update`, profile, {
       headers: environment.headers, withCredentials: environment.withCredentials,
-      observe: 'response'
     });
     res.subscribe((response) => {
-      console.log(response.status);
+        this.profile = response;
     });
     return res;
   }
-  
+
   getProfile(id: number): Observable<Profile> {
-    //console.log(user)
-    //let userId: number = user.id;
     let requestUrl: string = this.profileUrl + "/" + id
-    return this.http.get<Profile>(requestUrl, {headers: environment.headers, withCredentials: environment.withCredentials} )
+    let res = this.http.get<Profile>(requestUrl, {
+      headers: environment.headers,
+      withCredentials: environment.withCredentials
+    })
+    res.subscribe( (data) => {
+      this.profile = data;
+    })
+    return res;
   }
-
-  getAllProfiles(): Observable<Profile[]>{
-    return this.http.get<Profile[]>(`${this.profileUrl}`, {headers: environment.headers, withCredentials: environment.withCredentials} )
-  }
-
 }

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PostFeedPageComponent } from './post-feed-page.component';
+import {PostFeedPageComponent} from './post-feed-page.component';
 
 describe('PostFeedPageComponent', () => {
   let component: PostFeedPageComponent;
@@ -8,9 +8,9 @@ describe('PostFeedPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostFeedPageComponent ]
+      declarations: [PostFeedPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PostFeedPageComponent);
     component = fixture.componentInstance;
