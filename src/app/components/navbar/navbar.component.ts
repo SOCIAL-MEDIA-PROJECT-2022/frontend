@@ -38,8 +38,8 @@ profile: Profile = {} as Profile;
   openProfile() {
     const dialogCfg = new MatDialogConfig();
     dialogCfg.autoFocus = true;
-    dialogCfg.height="50%"
-    dialogCfg.width="70%"
+    dialogCfg.height="750x"
+    dialogCfg.width="950px"
     this.dialog.open(MyCardComponent, dialogCfg);  }
 
   logout() {

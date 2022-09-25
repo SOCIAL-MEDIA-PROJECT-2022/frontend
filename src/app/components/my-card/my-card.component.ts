@@ -40,8 +40,6 @@ export class MyCardComponent implements OnInit {
 
   showEditProfile() {
     if(this.edit) {
-      console.log(this.profile);
-      console.log("we will call update here");
       this.profileService.update(this.profile);
     }
     this.edit = !this.edit;

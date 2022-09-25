@@ -16,14 +16,14 @@ export class ProfileService {
   constructor(private http: HttpClient) {
   }
 
-  update(profile: Profile): Observable<any> {
+  update(profile: Profile): Observable<Profile> {
+    console.log("Calling Update with: ");
     console.log(profile);
-    const res = this.http.patch<any>(`${this.profileUrl}/update`, profile, {
+    const res = this.http.patch<Profile>(`${this.profileUrl}/update`, profile, {
       headers: environment.headers, withCredentials: environment.withCredentials,
-      observe: 'response'
     });
     res.subscribe((response) => {
-      console.log(response.status);
+        this.profile = response;
     });
     return res;
   }
