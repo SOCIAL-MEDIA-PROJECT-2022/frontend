@@ -1,4 +1,3 @@
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -12,4 +11,10 @@
 .post-feed {
   flex: 1 1 auto;
   overflow-y: auto;
+  width: 700px; /*change it to whatever looks best */
+  margin: auto;
+
+  justify-content: center;
+
+  align-items: center;
 }
