@@ -3,7 +3,6 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import Post from '../models/Post';
-import Request from '../models/Request';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +15,9 @@ export class PostService {
   }
 
   getAllPosts(id: number): Observable<Post[]> {
-    let getAllUrl = this.postUrl +"/"+ id;
+    let getAllUrl = this.postUrl + "/" + id;
     console.log(getAllUrl);
-    return this.http.get<Post[]>(getAllUrl,{
+    return this.http.get<Post[]>(getAllUrl, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     })
