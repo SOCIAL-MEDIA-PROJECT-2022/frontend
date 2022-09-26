@@ -46,5 +46,7 @@ profile: Profile = {} as Profile;
     this.authService.logout();
     this.router.navigate(['login']);
   }
-
+  resetPassword(){
+    this.router.navigate(['reset-password']);
+  }
 }

@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {AuthService} from 'src/app/services/auth.service';
+
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +17,15 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required),
   });
 
-  constructor(private authService: AuthService, private router: Router) {
-  }
 
+  constructor(private authService: AuthService, private router: Router, private dMode : DarkModeService) { }
+  matColorPostLogin : boolean
   ngOnInit(): void {
+    this.dMode.theme.subscribe(
+      value => {
+        this.matColorPostLogin = value
+      }
+    )
   }
 
   onSubmit(e: any): void {

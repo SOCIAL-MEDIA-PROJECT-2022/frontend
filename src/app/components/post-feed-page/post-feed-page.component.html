@@ -3,29 +3,28 @@
     <app-navbar></app-navbar>
   </div>
 
-  <div>
-    <form *ngIf="!createPost; else createPostTemplate" class="form">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Something on your mind?</mat-label>
-        <input (focus)="toggleCreatePost()" matInput>
-      </mat-form-field>
+<div>
+    <form [class.darkColorMode] = "matColorPostFeed" class="form" *ngIf="!createPost; else createPostTemplate">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Something on your mind?</mat-label>
+            <input matInput (focus)="toggleCreatePost()">
+        </mat-form-field>
     </form>
 
     <ng-template #createPostTemplate>
-      <form (ngSubmit)="submitPost($event)" [formGroup]="postForm" class="form">
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Make a Post</mat-label>
-          <textarea autofocus formControlName="text" matInput></textarea>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="full-width">
-          <mat-label>Add an Image?</mat-label>
-          <input formControlName="imageUrl" matInput>
-        </mat-form-field>
-        <div align="end">
-          <button (click)="toggleCreatePost()" color="warn" mat-raised-button>Cancel</button>
-          <button (click)="submitPost($event)" color="primary" mat-raised-button>Post</button>
-        </div>
-
+        <form [class.darkColorMode] = "matColorPostFeed" class="form" [formGroup]="postForm" (ngSubmit)="submitPost($event)">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Make a Post</mat-label>
+                <textarea matInput autofocus formControlName="text"></textarea>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label >Add an Image?</mat-label>
+                <input matInput formControlName="imageUrl">
+            </mat-form-field>
+            <div align="end">
+                <button mat-raised-button color="primary" (click)="toggleCreatePost()">Cancel</button>
+                <button mat-raised-button color="warn" (click)="submitPost($event)">Post</button>
+            </div>
       </form>
     </ng-template>
 
@@ -33,4 +32,4 @@
       <app-post [post]="post"></app-post>
     </div>
   </div>
-
+</div>
