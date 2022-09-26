@@ -1,9 +1,9 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
 import Post from 'src/app/models/Post';
-import { AuthService } from 'src/app/services/auth.service';
-import { DarkModeService } from 'src/app/services/dark-mode.service';
-import { PostService } from 'src/app/services/post.service';
+import {AuthService} from 'src/app/services/auth.service';
+import {DarkModeService} from 'src/app/services/dark-mode.service';
+import {PostService} from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -16,30 +16,33 @@ export class PostComponent implements OnInit {
     text: new FormControl(''),
   })
 
-  
+
   @Input('post') post: Post
   replyToPost: boolean = false
 
-  postLikesP : number;
-  postID : number = 0;
 
-  constructor(private postService: PostService, private authService: AuthService, private dMode : DarkModeService) { }
+  postLikesP: number;
+  postID: number = 0;
   matColorPost: boolean
+
+  constructor(private postService: PostService, private authService: AuthService, private dMode: DarkModeService) {
+  }
+
   ngOnInit(): void {
-   this.postID = this.post.id
-   this.postLikesP = (this.post.likes).length
-  
+    this.postID = this.post.id
+    this.postLikesP = (this.post.likes).length
+
     this.dMode.theme.subscribe(
       value => {
         this.matColorPost = value
       }
     )
-    }
+  }
 
   toggleReplyToPost = () => {
     this.replyToPost = !this.replyToPost
   }
-  
+
 
   submitReply = (e: any) => {
     e.preventDefault()

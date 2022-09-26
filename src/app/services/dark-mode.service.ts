@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 
 @Injectable({
   providedIn: 'root'
@@ -7,5 +7,5 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class DarkModeService {
 
   public theme: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  
+
 }

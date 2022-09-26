@@ -1,20 +1,22 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {environment} from 'src/environments/environment';
 import User from '../models/User';
 
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   authUrl: string = `${environment.baseUrl}/auth`;
   currentUser: User;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   login(email: string, password: string): Observable<any> {
-    const payload = { email: email, password: password };
+    const payload = {email: email, password: password};
     const res = this.http.post<any>(`${this.authUrl}/login`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials,
@@ -44,16 +46,20 @@ export class AuthService {
     return this.http.post<any>(`${this.authUrl}/register`, payload, {
       headers: environment.headers,
     });
+
   }
+
   resetpassword(email: string, password: string): Observable<any> {
-    const payload = { email: email, password: password };
+    const payload = {email: email, password: password};
     const res = this.http.patch<any>(`${this.authUrl}/resetPassword`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials,
-    observe:'response'}, );
+      observe: 'response'
+    },);
     res.subscribe((response) => {
       console.log(response.status);
     });
     return res;
   }
+
 }

@@ -1,0 +1,13 @@
+<div class="search-bar-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="searchForm" class="form">
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <input formControlName="email" matInput placeholder="">
+        <button class="btn-block" color="accent" mat-stroked-button type="submit"><img
+          alt="search"
+          height="25" src="https://www.nicepng.com/png/detail/137-1378213_select-public-search-button-z-svg-png-icon.png"
+          width="25"></button>
+      </mat-form-field>
+    </mat-card-content>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<mat-dialog-content>
+  <div class="search-card-container">
+    <mat-grid-list cols="8" rowHeight="100px">
+      <header>
+        <h2>{{data.firstName}} {{data.lastName}}'s Profile</h2>
+      </header>
+      <mat-grid-tile [colspan]="3" [rowspan]="4" id="my-card-pic">
+        <div>
+          <img [src]=profile.profilePic alt="Profile Picture" mat-card-image>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>About Me</mat-grid-tile-header>
+        <p>{{profile.aboutMe}}</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>Hobbies</mat-grid-tile-header>
+        <p>{{profile.hobbies}}</p>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>Something Interesting</mat-grid-tile-header>
+        <p>{{profile.somethingElse}}</p>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="2">
+        <mat-grid-tile-header>Placeholder</mat-grid-tile-header>
+        <p>Placeholder</p>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</mat-dialog-content>

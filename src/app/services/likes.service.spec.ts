@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { TestBed } from '@angular/core/testing';
-import { of } from 'rxjs/internal/observable/of';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import {TestBed} from '@angular/core/testing';
 import Likes from '../models/Likes';
 
-import { LikesService } from './likes.service';
+import {LikesService} from './likes.service';
 
 describe('LikesService', () => {
   let service: LikesService;
@@ -27,15 +25,15 @@ describe('LikesService', () => {
   });
 
   it('should patch likes and return likes pairs', (done) => {
-    const newLike: Likes = {id:10000, id2: 2};
+    const newLike: Likes = {id: 10000, id2: 2};
     service.updateLikes(newLike.id, newLike.id2).subscribe((data) => {
-      
+
       expect(data).toBe(newLike);
-      
-      
+
+
     });
-      
+
     done();
   });
-  
+
 });
