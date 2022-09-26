@@ -1,32 +1,37 @@
 <div class="post-card">
-    <mat-card>
-        <mat-card-header>
-            <div mat-card-avatar class="header-image"></div>
-            <mat-card-title>{{post.author.firstName}} {{post.author.lastName}}</mat-card-title>
-            <mat-card-subtitle>{{post.author.email}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image *ngIf="post.imageUrl" src="{{ post.imageUrl }}" alt="Post Image">
-        <mat-card-content>
-            <p>
-                {{post.text}}
-            </p>
-            <div *ngFor="let comment of post.comments" class="comment-container">
-                <mat-divider></mat-divider>
-                <app-comment [comment]="comment"></app-comment>
-            </div>
-        </mat-card-content>
-        <mat-card-actions align="end">
-            <button mat-raised-button color="primary" (click)="toggleReplyToPost()">Reply</button>
-        </mat-card-actions>
-        <form class="form" *ngIf="replyToPost" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
-            <mat-form-field class="full-width" appearance="fill">
-                <mat-label>Make a Post</mat-label>
-                <textarea matInput autofocus formControlName="text"></textarea>
-            </mat-form-field>
-            <div align="end">
-                <button mat-raised-button color="warn" (click)="toggleReplyToPost()">Cancel</button>
-                <button mat-raised-button color="primary" type="submit">Post</button>
-            </div>
-        </form>
-    </mat-card>
+  <mat-card [class.darkColorMode]="matColorPost">
+    <mat-card-header>
+      <div class="header-image" mat-card-avatar></div>
+      <mat-card-title>{{post.author.firstName}} {{post.author.lastName}}</mat-card-title>
+      <mat-card-subtitle>{{post.author.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <img *ngIf="post.imageUrl" alt="Post Image" mat-card-image src="{{ post.imageUrl }}">
+    <mat-card-content>
+      <p>
+        {{post.text}}
+      </p>
+      <div *ngFor="let comment of post.comments" class="comment-container">
+        <mat-divider></mat-divider>
+        <app-comment [comment]="comment"></app-comment>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+
+      <app-likes [postID]="post.id" [postLikes]="postLikesP"></app-likes>
+      <div style="flex: 8 1 0;"></div>
+      <button (click)="toggleReplyToPost()" color="warn" mat-raised-button style="flex: 1 1 0;">Reply</button>
+
+    </mat-card-actions>
+    <form (ngSubmit)="submitReply($event)" *ngIf="replyToPost" [formGroup]="commentForm" class="form">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Make a Post</mat-label>
+        <textarea autofocus formControlName="text" id="postText" matInput></textarea>
+      </mat-form-field>
+      <div align="end">
+        <button (click)="toggleReplyToPost()" color="primary" mat-raised-button>Cancel</button>
+        <button color="warn" mat-raised-button type="submit">Post</button>
+      </div>
+    </form>
+  </mat-card>
 </div>

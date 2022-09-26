@@ -1,8 +1,8 @@
-export default class Request{
-    id:number
+export default class Request {
+  id: number
 
-    constructor(id:number){
-        this.id = id
-    }
+  constructor(id: number) {
+    this.id = id
+  }
 
 }
