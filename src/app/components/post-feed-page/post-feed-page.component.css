@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  position: sticky;
+}
+
+.post-feed {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  width: 700px; /*change it to whatever looks best */
+  margin: auto;
+
+  justify-content: center;
+
+  align-items: center;
+}

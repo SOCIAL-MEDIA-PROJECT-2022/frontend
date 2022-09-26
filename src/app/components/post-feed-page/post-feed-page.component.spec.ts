@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { PostFeedPageComponent } from './post-feed-page.component';
+import {HttpClient} from '@angular/common/http';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {PostFeedPageComponent} from './post-feed-page.component';
 
 describe('PostFeedPageComponent', () => {
   let component: PostFeedPageComponent;
@@ -8,9 +9,11 @@ describe('PostFeedPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PostFeedPageComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [PostFeedPageComponent],
+      providers: [HttpClient]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PostFeedPageComponent);
     component = fixture.componentInstance;
