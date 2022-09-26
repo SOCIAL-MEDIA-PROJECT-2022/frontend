@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {FollowService} from "../../services/follow.service";
 import User from "../../models/User";
-import Follower from "../../models/Follower";
 
 @Component({
   selector: 'app-follow',
@@ -13,6 +12,7 @@ export class FollowComponent implements OnInit {
   user: User;
   state: string;
   @Input() followName: string;
+
   constructor(private authService: AuthService, private followService: FollowService) {
   }
 
@@ -32,7 +32,7 @@ export class FollowComponent implements OnInit {
     if (element) {
       if (this.state == "Unfollow") {
         element.style.setProperty("color", "green");
-        this.followService.unfollow(this.authService.currentUser.id,this.followName).subscribe();
+        this.followService.unfollow(this.authService.currentUser.id, this.followName).subscribe();
         this.state = "Follow";
       } else {
         this.state = "Unfollow";

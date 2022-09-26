@@ -16,7 +16,7 @@ export class FollowService {
   }
 
   follow(id: number, email: string): Observable<any> {
-    let payload = {id:id, email: email}
+    let payload = {id: id, email: email}
     return this.http.patch<any>(`${this.posturl}/follow`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
@@ -25,20 +25,20 @@ export class FollowService {
   }
 
   unfollow(id: number, email: string) {
-    let payload = {id:id, email: email}
-    return this.http.patch<any>(`${this.posturl}/unfollow`,payload, {
+    let payload = {id: id, email: email}
+    return this.http.patch<any>(`${this.posturl}/unfollow`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     })
   }
 
-  getFollowers(id:number):Observable<Follower[]> {
-    let getUrl = this.posturl +"/"+ id;
-    let res = this.http.get<Follower[]> (getUrl,{
+  getFollowers(id: number): Observable<Follower[]> {
+    let getUrl = this.posturl + "/" + id;
+    let res = this.http.get<Follower[]>(getUrl, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     });
-    res.subscribe((data) =>{
+    res.subscribe((data) => {
       this.currentFollowers = data;
     })
     return res;
