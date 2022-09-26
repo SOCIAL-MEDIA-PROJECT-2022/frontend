@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {FollowService} from "../../services/follow.service";
 import User from "../../models/User";
@@ -12,32 +12,34 @@ import Follower from "../../models/Follower";
 export class FollowComponent implements OnInit {
   user: User;
   state: string;
-  follower: Follower;
-
+  @Input() followName: string;
   constructor(private authService: AuthService, private followService: FollowService) {
   }
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
-    this.state = "Follow";
+    for (let f of this.followService.currentFollowers) {
+      if (f.email === this.followName)
+        this.state = "Unfollow"
+      else
+        this.state = "Follow"
+    }
   }
+
 
   follow(): void {
     const element: HTMLElement | null = document.getElementById('follow-button');
     if (element) {
-      if (this.state == "unfollow") {
-        this.state = "follow";
+      if (this.state == "Unfollow") {
         element.style.setProperty("color", "green");
-        element.innerText = "Follow"
+        this.followService.unfollow(this.authService.currentUser.id,this.followName).subscribe();
+        this.state = "Follow";
       } else {
-        this.state = "unfollow";
+        this.state = "Unfollow";
+        this.followService.follow(this.authService.currentUser.id, this.followName).subscribe();
         element.style.setProperty("color", "red");
         element.innerText = "Unfollow"
       }
-
-      this.follower = <Follower>({id: this.authService.currentUser.id, email: this.user.email, state: this.state})
-      console.log(this.follower)
-      this.followService.follow(this.follower).subscribe();
     }
   }
 }

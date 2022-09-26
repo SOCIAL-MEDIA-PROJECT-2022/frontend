@@ -30,10 +30,6 @@ export class AuthService {
     return res;
   }
 
-  isAuthenticated() {
-    return this.isLoggedIn;
-  }
-
   logout(): void {
     this.http.post(`${this.authUrl}/logout`, null).subscribe();
     this.isLoggedIn = false;

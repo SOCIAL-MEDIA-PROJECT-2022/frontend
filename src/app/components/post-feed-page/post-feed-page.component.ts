@@ -5,6 +5,7 @@ import {AuthService} from 'src/app/services/auth.service';
 import Request from 'src/app/models/Request'
 import {DarkModeService} from 'src/app/services/dark-mode.service';
 import {PostService} from 'src/app/services/post.service';
+import {FollowService} from "../../services/follow.service";
 
 @Component({
   selector: 'app-post-feed-page',
@@ -24,10 +25,11 @@ export class PostFeedPageComponent implements OnInit {
   request: Request;
   matColorPostFeed: boolean
 
-  constructor(private postService: PostService, private authService: AuthService, private dMode: DarkModeService) {
+  constructor(private postService: PostService, private authService: AuthService, private dMode: DarkModeService, private followService: FollowService) {
   }
 
   ngOnInit(): void {
+
     this.postService.getAllPosts(this.authService.currentUser.id).subscribe(
       (response) => {
         this.posts = response
@@ -39,6 +41,8 @@ export class PostFeedPageComponent implements OnInit {
         this.matColorPostFeed = value
       }
     )
+
+    this.followService.getFollowers(this.authService.currentUser.id);
 
   }
 

@@ -29,7 +29,8 @@ export class SearchFeedPageComponent implements OnInit {
   openUserModel(user: User) {
     const dialogCfg = new MatDialogConfig();
     dialogCfg.autoFocus = true;
-    dialogCfg.width = '75%'
+    dialogCfg.height = "750x"
+    dialogCfg.width = "950px"
     dialogCfg.data = user;
     this.dialog.open(SearchCardComponent, dialogCfg);
   }

@@ -9,20 +9,39 @@ import Follower from '../models/Follower';
 })
 export class FollowService {
 
-  posturl: string = `${environment.baseUrl}/follow`;
+  posturl: string = `${environment.baseUrl}/followers`;
+  currentFollowers: Follower[];
 
   constructor(private http: HttpClient) {
   }
 
-  follow(follower: Follower): Observable<any> {
-    console.log("made it here")
-    console.log(follower)
-    console.log(this.posturl)
-    return this.http.patch<any>(`${this.posturl}`, follower, {
+  follow(id: number, email: string): Observable<any> {
+    let payload = {id:id, email: email}
+    return this.http.patch<any>(`${this.posturl}/follow`, payload, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     })
 
+  }
+
+  unfollow(id: number, email: string) {
+    let payload = {id:id, email: email}
+    return this.http.patch<any>(`${this.posturl}/unfollow`,payload, {
+      headers: environment.headers,
+      withCredentials: environment.withCredentials
+    })
+  }
+
+  getFollowers(id:number):Observable<Follower[]> {
+    let getUrl = this.posturl +"/"+ id;
+    let res = this.http.get<Follower[]> (getUrl,{
+      headers: environment.headers,
+      withCredentials: environment.withCredentials
+    });
+    res.subscribe((data) =>{
+      this.currentFollowers = data;
+    })
+    return res;
   }
 
 
