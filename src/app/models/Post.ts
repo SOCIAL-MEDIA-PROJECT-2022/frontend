@@ -5,15 +5,17 @@ export default class Post {
   text: string
   imageUrl: string
   author: User
-  likes: string[]
   comments: Post[]
+  comment: boolean
+  likes: string[]
 
-  constructor(id: number, text: string, imageUrl: string, author: User, likes: string[], comments: Post[]) {
+
+  constructor(id: number, text: string, imageUrl: string, author: User, likes: string[], comments: Post[], comment: boolean) {
     this.id = id
     this.text = text
     this.imageUrl = imageUrl
     this.author = author
-    this.likes = likes
     this.comments = comments
+    this.comment = comment
   }
 }

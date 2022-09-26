@@ -10,7 +10,9 @@ import User from '../models/User';
 
 export class AuthService {
   authUrl: string = `${environment.baseUrl}/auth`;
-  currentUser: User;
+  currentUser: User
+  isLoggedIn: boolean = false;
+
 
   constructor(private http: HttpClient) {
   }
@@ -22,13 +24,15 @@ export class AuthService {
       withCredentials: environment.withCredentials,
     });
     res.subscribe((data) => {
-      this.currentUser = data;
-    });
+      this.currentUser = data
+      this.isLoggedIn = true
+    })
     return res;
   }
 
   logout(): void {
     this.http.post(`${this.authUrl}/logout`, null).subscribe();
+    this.isLoggedIn = false;
   }
 
   register(

@@ -14,8 +14,10 @@ export class PostService {
   constructor(private http: HttpClient) {
   }
 
-  getAllPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.postUrl}`, {
+  getAllPosts(id: number): Observable<Post[]> {
+    let getAllUrl = this.postUrl + "/" + id;
+    console.log(getAllUrl);
+    return this.http.get<Post[]>(getAllUrl, {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     })

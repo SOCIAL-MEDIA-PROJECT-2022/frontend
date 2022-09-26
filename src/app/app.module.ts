@@ -15,6 +15,7 @@ import {PostComponent} from './components/post/post.component';
 import {CommentComponent} from './components/comment/comment.component';
 import {UserInitialsPipe} from './pipes/user-initials.pipe';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import {FollowComponent} from './components/follow/follow.component';
 import {ResetPasswordComponent} from './components/reset-password/reset-password.component';
 import {DarkModeToggleComponent} from './components/dark-mode-toggle/dark-mode-toggle.component';
 import {LikesComponent} from './components/likes/likes.component';
@@ -35,6 +36,7 @@ import {SearchCardComponent} from './components/search-card/search-card.componen
     CommentComponent,
     NavbarComponent,
     UserInitialsPipe,
+    FollowComponent,
     NotFoundComponent,
     MyCardComponent,
     SearchBarComponent,
@@ -43,7 +45,6 @@ import {SearchCardComponent} from './components/search-card/search-card.componen
     ResetPasswordComponent,
     DarkModeToggleComponent,
     LikesComponent,
-
   ],
   imports: [
     BrowserModule,
