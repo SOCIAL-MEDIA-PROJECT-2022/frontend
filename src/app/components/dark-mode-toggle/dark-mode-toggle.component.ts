@@ -1,6 +1,5 @@
-import { Component, KeyValueDiffers, OnInit } from '@angular/core';
-import { elementAt } from 'rxjs';
-import { DarkModeService } from 'src/app/services/dark-mode.service';
+import {Component, OnInit} from '@angular/core';
+import {DarkModeService} from 'src/app/services/dark-mode.service';
 
 @Component({
   selector: 'app-dark-mode-toggle',
@@ -10,23 +9,24 @@ import { DarkModeService } from 'src/app/services/dark-mode.service';
 
 
 export class DarkModeToggleComponent implements OnInit {
-  
-  checkbox : HTMLInputElement | null;
+
+  checkbox: HTMLInputElement | null;
+
+  constructor(private dMode: DarkModeService) {
+  }
 
   toggleDarkTheme(): void {
     document.body.classList.toggle('dark-mode');
-    
+
     this.dMode.theme.next(!this.dMode.theme.value);
-    
+
   }
 
-  constructor(private dMode : DarkModeService ) {}
-
   ngOnInit(): void {
-    this.checkbox = document.getElementById("dark") as HTMLInputElement | null; 
+    this.checkbox = document.getElementById("dark") as HTMLInputElement | null;
     this.dMode.theme.subscribe(
       value => {
-        if(this.checkbox){
+        if (this.checkbox) {
           this.checkbox.checked = value;
         }
       }

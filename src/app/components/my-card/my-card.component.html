@@ -17,15 +17,15 @@
             <h3 *ngIf="edit">IMG URL:</h3>
             <mat-card-footer *ngIf="edit"><input [(ngModel)]="profile.profilePic"></mat-card-footer>
           </div>
-          </div>
-      </mat-grid-tile >
+        </div>
+      </mat-grid-tile>
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="about-me">
         <mat-grid-tile-header>About Me</mat-grid-tile-header>
         <p *ngIf="showInfo">{{profile.aboutMe}}</p>
         <div>
-        <mat-card-footer *ngIf="edit">
-        <input [(ngModel)]="profile.aboutMe"/>
-        </mat-card-footer>
+          <mat-card-footer *ngIf="edit">
+            <input [(ngModel)]="profile.aboutMe"/>
+          </mat-card-footer>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1"
@@ -39,13 +39,13 @@
         <mat-grid-tile-header>Hobbies</mat-grid-tile-header>
         <p *ngIf="showInfo">{{profile.hobbies}}</p>
         <div>
-        <p *ngIf="edit"><input [(ngModel)]="profile.hobbies"/></p>
+          <p *ngIf="edit"><input [(ngModel)]="profile.hobbies"/></p>
         </div>
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="interesting-fact">
         <mat-grid-tile-header>Something Interesting</mat-grid-tile-header>
-        <p *ngIf="showInfo" >{{profile.somethingElse}}</p>
+        <p *ngIf="showInfo">{{profile.somethingElse}}</p>
         <p *ngIf="edit"><input [(ngModel)]="profile.somethingElse"/></p>
 
       </mat-grid-tile>

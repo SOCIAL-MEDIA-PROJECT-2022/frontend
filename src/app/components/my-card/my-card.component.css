@@ -4,13 +4,14 @@
 }
 
 
-.mat-grid-tile{
+.mat-grid-tile {
   padding: 0;
 }
 
-#my-card-container{
+#my-card-container {
   display: flex;
 }
+
 #my-card-pic div {
   display: flex;
   flex-direction: column;
@@ -34,10 +35,11 @@
   cursor: pointer;
 }
 
-.mat-grid-tile{
+.mat-grid-tile {
   display: flex;
   flex-direction: row;
 }
+
 .profile1 {
   margin-left: 60px;
   height: 100px;

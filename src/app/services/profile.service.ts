@@ -1,7 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
-import User from '../models/User';
 import {Observable} from 'rxjs';
 import Profile from '../models/Profile';
 
@@ -10,7 +9,7 @@ import Profile from '../models/Profile';
 })
 export class ProfileService {
 
-  profile:Profile;
+  profile: Profile;
   profileUrl: string = `${environment.baseUrl}/profile`;
 
   constructor(private http: HttpClient) {
@@ -23,7 +22,7 @@ export class ProfileService {
       headers: environment.headers, withCredentials: environment.withCredentials,
     });
     res.subscribe((response) => {
-        this.profile = response;
+      this.profile = response;
     });
     return res;
   }
@@ -34,7 +33,7 @@ export class ProfileService {
       headers: environment.headers,
       withCredentials: environment.withCredentials
     })
-    res.subscribe( (data) => {
+    res.subscribe((data) => {
       this.profile = data;
     })
     return res;

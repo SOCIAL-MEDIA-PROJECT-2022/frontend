@@ -5,10 +5,12 @@
   <span class="spacer"></span>
   <button (click)="home()" class="navbar-btn" id="home-btn" mat-button>Feed</button>
 
-  <button (click)="openProfile()" class="navbar-btn" id="my-card-btn" mat-button><img [src]=profile.profilePic class="myimg" alt="Profile" /></button>
+  <button (click)="openProfile()" class="navbar-btn" id="my-card-btn" mat-button><img [src]=profile.profilePic
+                                                                                      alt="Profile" class="myimg"/>
+  </button>
   <div class="toggle-button">
     <app-dark-mode-toggle></app-dark-mode-toggle>
   </div>
-  <button mat-button (click)="resetPassword()">Reset Password</button>
+  <button (click)="resetPassword()" mat-button>Reset Password</button>
   <button (click)="logout();" class="navbar-btn" id="logout-btn" mat-button>Logout</button>
 </mat-toolbar>

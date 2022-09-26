@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <section class="container">
   <div (click)="openUserModel(user)" *ngFor="let user of users" class="usercard">
-    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Profile Picture">
+    <img alt="Profile Picture" src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png">
     {{user.firstName}}
     {{user.lastName}}
     {{user.email}}

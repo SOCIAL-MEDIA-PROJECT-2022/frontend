@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { SearchService } from 'src/app/services/search.service';
+import {Component, OnInit} from '@angular/core';
+import {SearchService} from 'src/app/services/search.service';
 import User from 'src/app/models/User';
-import { AuthService } from '../../services/auth.service';
-import { SearchCardComponent } from '../search-card/search-card.component';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import {AuthService} from '../../services/auth.service';
+import {SearchCardComponent} from '../search-card/search-card.component';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search-feed-page',
@@ -17,7 +17,8 @@ export class SearchFeedPageComponent implements OnInit {
     private searchService: SearchService,
     private authService: AuthService,
     public dialog: MatDialog
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.searchService.searchedUsers.subscribe((value) => {

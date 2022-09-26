@@ -17,7 +17,7 @@ export class MyCardComponent implements OnInit {
   edit: boolean = false;
   showInfo: boolean = true;
   isSubmitted: boolean = false;
-  placeholder:String = "Placeholder"
+  placeholder: String = "Placeholder"
 
   profileForm = new FormGroup({
     firstName: new FormControl('', [Validators.email, Validators.required]),
@@ -35,11 +35,11 @@ export class MyCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.currentUser;
-    this.profile =this.profileService.profile;
+    this.profile = this.profileService.profile;
   }
 
   showEditProfile() {
-    if(this.edit) {
+    if (this.edit) {
       this.profileService.update(this.profile);
     }
     this.edit = !this.edit;

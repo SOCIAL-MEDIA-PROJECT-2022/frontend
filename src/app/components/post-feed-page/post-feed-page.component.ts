@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import Post from 'src/app/models/Post';
-import { AuthService } from 'src/app/services/auth.service';
-import { DarkModeService } from 'src/app/services/dark-mode.service';
-import { PostService } from 'src/app/services/post.service';
+import {AuthService} from 'src/app/services/auth.service';
+import {DarkModeService} from 'src/app/services/dark-mode.service';
+import {PostService} from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post-feed-page',
@@ -20,9 +20,10 @@ export class PostFeedPageComponent implements OnInit {
 
   posts: Post[] = [];
   createPost: boolean = false;
-
-  constructor(private postService: PostService, private authService: AuthService, private dMode : DarkModeService) { }
   matColorPostFeed: boolean
+
+  constructor(private postService: PostService, private authService: AuthService, private dMode: DarkModeService) {
+  }
 
   ngOnInit(): void {
     this.postService.getAllPosts().subscribe(

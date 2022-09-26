@@ -2,20 +2,20 @@
   {{inputComment.text}}
 </p>
 <!-- replying to a post-->
-<div  [class.darkColorMode] = "matColorPostComment" class="comment-reply" align="end" >
-    <div class="comment-reply-text" (click)="toggleReplyToComment()">
-        reply
+<div [class.darkColorMode]="matColorPostComment" align="end" class="comment-reply">
+  <div (click)="toggleReplyToComment()" class="comment-reply-text">
+    reply
+  </div>
+  <form (ngSubmit)="submitReply($event)" *ngIf="replyToComment" [formGroup]="commentForm" class="form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Make a Post</mat-label>
+      <textarea autofocus formControlName="text" matInput></textarea>
+    </mat-form-field>
+    <div align="end">
+      <button (click)="toggleReplyToComment()" color="" mat-raised-button>Cancel</button>
+      <button color="warn" mat-raised-button type="submit">Post</button>
     </div>
-    <form  class="form" *ngIf="replyToComment" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Make a Post</mat-label>
-            <textarea matInput autofocus formControlName="text"></textarea>
-        </mat-form-field>
-        <div align="end">
-            <button mat-raised-button color="" (click)="toggleReplyToComment()">Cancel</button>
-            <button mat-raised-button color="warn" type="submit">Post</button>
-        </div>
-    </form>
+  </form>
 </div>
 <div *ngFor="let comment of inputComment.comments" class="comment-container">
   <mat-divider></mat-divider>

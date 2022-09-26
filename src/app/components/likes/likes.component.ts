@@ -1,8 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import Likes from 'src/app/models/Likes';
-import { AuthService } from 'src/app/services/auth.service';
-import { LikesService } from 'src/app/services/likes.service';
-import { PostService } from 'src/app/services/post.service';
+import {AuthService} from 'src/app/services/auth.service';
+import {LikesService} from 'src/app/services/likes.service';
+import {PostService} from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-likes',
@@ -10,19 +10,20 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./likes.component.css']
 })
 export class LikesComponent implements OnInit {
-  
+
 
   likes: Likes
 
-  @Input () postID : number
+  @Input() postID: number
 
-  @Input() postLikes : number
+  @Input() postLikes: number
 
-  constructor(private authService: AuthService, private likeService: LikesService, private postService: PostService) { }
+  constructor(private authService: AuthService, private likeService: LikesService, private postService: PostService) {
+  }
 
   ngOnInit(): void {
   }
-  
+
   likePost = () => {
 
     this.likes = {
@@ -35,10 +36,9 @@ export class LikesComponent implements OnInit {
 
       console.log(data);
 
-    this.postLikes = data.likes.length
-      
+      this.postLikes = data.likes.length
+
     })
-    
 
 
   }
