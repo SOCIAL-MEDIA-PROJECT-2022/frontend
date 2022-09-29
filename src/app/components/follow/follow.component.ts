@@ -27,7 +27,7 @@ export class FollowComponent implements OnInit {
     }
 
     for (let f of this.followService.currentFollowers) {
-      if (f.email === this.followName){  
+      if (f.email === this.followName){
         this.state = "Unfollow";
         if (element) element.style.setProperty("color", "red");
       }
