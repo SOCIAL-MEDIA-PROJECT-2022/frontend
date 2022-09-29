@@ -2,13 +2,7 @@
   <div class="my-card-container">
     <mat-grid-list cols="8" rowHeight="100px">
       <header id="name">
-        <h2 *ngIf="showInfo" [contentEditable]="edit">{{user.firstName}} {{user.lastName}}'s Profile</h2>
-        <div *ngIf="edit">
-          <h3>First Name: </h3>
-          <p [contentEditable]="edit">{{user.firstName}}</p>
-          <h3>Last Name:</h3>
-          <p [contentEditable]="edit">{{user.lastName}}</p>
-        </div>
+        <h2 *ngIf="showInfo">{{user.firstName}} {{user.lastName}}'s Profile</h2>
       </header>
       <mat-grid-tile [colspan]="3" [rowspan]="4" id="my-card-pic">
         <div>
@@ -31,8 +25,7 @@
       <mat-grid-tile [colspan]="1"
                      [rowspan]="1" id="my-card-avatar">
         <img (click)="showEditProfile()"
-             alt="Image of Avatar"
-             mat-card-image src="../../../assets/images/edit.png">
+             mat-card-image src="../../../assets/images/edit.png" alt="Edit">
       </mat-grid-tile>
 
       <mat-grid-tile [colspan]="4" [rowspan]="2" id="hobbies">
